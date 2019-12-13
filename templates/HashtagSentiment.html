@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--  #HEAD-->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hashtags Sentiments</title>
+
+<!--    #CHART CSS-->
+    <script src='static/js/Chart.min.js'></script>
+
+      <!--    #USER CSS-->
+    <link rel="stylesheet" href="/static/css/main.css">
+  </head>
+
+<!--  #NAVIGATION BAR-->
+    <header>
+        <div class="sidebar">
+        <a href="/home">Home</a>
+        <a href="/CitySentiments">City Sentiments</a>
+        <a class="active" href="/HashtagSentiment">Hashtag Sentiment</a>
+        <a href="/TopTweetingCities">Top Tweeting Cities</a>
+        <a href="/OverallSentiments">Overall Sentiments</a>
+            <a href="/MostSpokenWord">Most Spoken Word</a>
+            <a href="/Trial">Trial</a>
+        </div>
+    </header>
+
+
+<!--  #BODY-->
+  <body>
+
+    <div class="content">
+
+    <h1 id="movtxt_1">Hashtag Sentiments Graph</h1>
+
+<!--#CANVAS FOR GRAPH WITH SCROLLABLE DIVISION-->
+    <div class="chart-container" style="position: relative; width: 100%; overflow:scroll;">
+    <canvas id="myChart" width="30000" height="600"></canvas>
+        <p id="caption">Hashtags Sentiments</p>
+    </div>
+ </div>
+
+<!--#GRAPH JAVA SCRIPT-->
+    <script>
+      // Global parameters:
+      // do not resize the chart canvas when its container does (keep at 600x400px)
+      Chart.defaults.global.responsive = false;
+
+      // define the chart data
+      var chartData = {
+        labels : [{% for item in labels %}
+                   "{{item}}",
+                  {% endfor %}],
+        datasets : [{
+            label: '{{ legend }}',
+            fill: true,
+            lineTension: 0.1,
+            backgroundColor: "rgba(75,192,192,0.4)",
+            borderColor: "rgba(75,192,192,1)",
+            borderCapStyle: 'butt',
+            borderDash: [],
+            borderDashOffset: 0.0,
+            borderJoinStyle: 'miter',
+            pointBorderColor: "rgba(75,192,192,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(75,192,192,1)",
+            pointHoverBorderColor: "rgba(220,220,220,1)",
+            pointHoverBorderWidth: 2,
+            pointRadius: 1,
+            pointHitRadius: 10,
+            data : [{% for item in values %}
+                      {{item}},
+                    {% endfor %}],
+            spanGaps: false
+        }],
+      }
+
+      // get chart canvas
+      var ctx = document.getElementById("myChart").getContext("2d");
+
+      // create the chart using the chart canvas
+      var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: chartData,
+      });
+    </script>
+
+  </body>
+
+</html>

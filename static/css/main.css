@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #DCDCDC;
+  background-image: url("");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/*---------------------------Navigation Bar------------------------------*/
+
+/* The side navigation menu */
+.sidebar {
+  margin: 20;
+  padding: 0;
+  width: 150px;
+  background-color: #333;
+  position: fixed;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: white;
+  padding: 25px;
+  text-decoration: none;
+}
+
+/* Active/current link */
+.sidebar a.active {
+  background-color: #DCDCDC;
+  color: black;
+}
+
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 150px;
+  padding: 1px 16px;
+  height: 400px;
+}
+
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 1000px) {
+  .sidebar {
+    width: 100%;
+    height: 20%;
+    position: relative;
+  }
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
+  }
+}
+
+/*-------------------- watch me move-----------------------------------*/
+#movtxt {
+   font-size: 3em;
+   text-style: bold;
+  animation: move 3s;
+  -webkit-animation: move 3s;
+}
+
+#movtxt_1 {
+   font-size: 2em;
+   text-style: bold;
+ /* animation: move 1s;
+  -webkit-animation: move 0.5s;*/
+}
+
+@keyframes move {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes move {
+  from {
+    margin-left: 100%;
+    width: 300%;
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+/*--------------Paragraph Animation---------------------*/
+p{
+  color: black;
+  font-family: "sans-serif";
+  font-size: 20px;
+  margin: 10px 0 0 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 40em;
+  animation: type 4s steps(60, end);
+}
+
+p.child_1{
+  animation: type2 8s steps(60, end);
+}
+
+p.child_2{
+  animation: type2 12s steps(60, end);
+}
+
+p a{
+  color: black;
+  text-decoration: none;
+}
+
+span{
+  animation: blink 1s infinite;
+}
+
+@keyframes type{
+  from { width: 0; }
+}
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 0;}
+  100%{ width: 100; }
+}
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+
+::selection{
+  background: black;
+}

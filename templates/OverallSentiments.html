@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Head-->
+  <head>
+    <meta charset="utf-8" >
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--      TITLE-->
+    <title>Positive Hashtags</title>
+
+      <!-- CHART.JS CSS -->
+    <script src='static/js/Chart.min.js'></script>
+
+<!-- USER DEFINED CSS -->
+    <link rel="stylesheet" href="/static/css/main.css">
+  </head>
+
+
+<!--    HEADER & NAVIGATION BAR-->
+    <header>
+        <div class="sidebar">
+        <a href="/home">Home</a>
+        <a href="/CitySentiments">City Sentiments</a>
+        <a href="/HashtagSentiment">Hashtag Sentiment</a>
+        <a href="/TopTweetingCities">Top Tweeting Cities</a>
+        <a class="active" href="/OverallSentiments">Overall Sentiments</a>
+            <a href="/MostSpokenWord">Most Spoken Word</a>
+            <a href="/Trial">Trial</a>
+        </div>
+    </header>
+
+
+<!-----body----->
+<body>
+    <div class="content">
+<!-- HEADER TEXT-->
+    <h1 id="movtxt_1">Overall Sentiments INDIA</h1>
+
+<!--PIE CHART CANVAS -->
+<div class="chart-container" style=" width: 80vw; overflow:hidden;">
+<canvas id="myChart" width="200" height="200"></canvas>
+<p>City Overall Sentiments</p>
+    </div>
+    </div>
+
+<!--    JAVA SCRIPT-->
+<script>
+var pieCanvas = document.getElementById("myChart");
+
+Chart.defaults.global.defaultFontFamily = "Lato";
+Chart.defaults.global.defaultFontSize = 20;
+
+var pieData = {
+    labels : [{% for item in labels %}
+                   "{{item}}",
+                  {% endfor %}],
+    datasets: [
+        {
+            data : [{% for item in values %}
+                      {{item}},
+                    {% endfor %}],
+            backgroundColor: [
+                "#A9DB54",  /* Green, Dark Green, Dark Red, Red, blue*/
+                "#66DC54",
+                "#DD5464",
+                "#DB8556",
+                "#DCC953"
+            ]
+        }]
+};
+
+var pieChart = new Chart(pieCanvas, {
+  type: 'pie',
+  data: pieData
+});
+</script>
+
+</body>
+</html>
