@@ -212,7 +212,7 @@ def MostSpokenWord():
 
     # ITTERATING ROWS FOR CITY NAMES
     for rows in large30.get_values():
-        datalist_1.append(str(rows[0]).replace(" ", "_"))
+        datalist_1.append(str(rows[0]).replace(" ", " "))
 
     # PASSING PARAMENTERS
     legend = 'Count'
@@ -253,14 +253,14 @@ def dropdown():
 
     # ITTERATING ROWS FOR CITY NAMES
     for rows in data_1.get_values():
-        datalist_1.append(str(rows[0]).replace(" ", "_"))
+        datalist_1.append(str(rows[0]).replace(" ", " "))
 
-    colours = datalist_1
+    dropdown_val = datalist_1
 
     print('Drop Down Values called')
 
     # RETURNING THE CHART.JS VALUES
-    return render_template('Trial.html', colours=colours)
+    return render_template('CitywiseHashtagsSentiments.html', dropdown_val=dropdown_val)
 
 
 # @app.route("/Trail" , methods=['GET', 'POST'])
@@ -270,7 +270,7 @@ def dropdown():
 #     return(str(select)) # just to see what select is
 
 
-@app.route("/Trail" , methods=['GET', 'POST'])
+@app.route("/CitywiseHashtagsSentiments", methods=['GET', 'POST'])
 def test():
 
     print('Trial Page')
@@ -299,12 +299,12 @@ def test():
     FTR_data = dataframe[(dataframe.Cities == select)]
 
     # EXTRACTING COLOUMNS DATA FROM DATAFRAME
-    data = FTR_data[['Cities', 'Hashtags']]
+    data = FTR_data[['Cities', 'Hashtags', 'Sentiment_Rating']]
 
     # GROUPING BY CITIES
-    data_gd = data.groupby(['Cities']).reset_index()
+    data_gd = data.groupby(['Hashtags']).sum().reset_index()
 
-    print(data_gd)
+    # print(data_gd)
 
     print('Trial Datafame Generated')
 
@@ -329,12 +329,12 @@ def test():
     legend = 'Tweets'
     Sentiment = datalist
     Cities = datalist_1
-    colours = datalist_2
+    dropdown_val = datalist_2
 
     print('Trial Datafame Values Passed')
 
     # RETURNING THE CHART.JS VALUES
-    return render_template('Trial.html', values=Sentiment, labels=Cities, legend=legend, colours=colours)
+    return render_template('CitywiseHashtagsSentiments.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val)
 
 # TRIAL-----------------------------------------------------------------------------------------------------------
 # TRIAL-----------------------------------------------------------------------------------------------------------

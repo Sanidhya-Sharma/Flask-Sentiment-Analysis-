@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Dropdown</title>
+    <title>Citywise Hashtags Sentiments</title>
        <!--    CHART.JS CSS -->
     <script src='static/js/Chart.min.js'></script>
 
@@ -20,7 +20,7 @@
         <a href="/TopTweetingCities">Top Tweeting Cities</a>
         <a href="/OverallSentiments">Overall Sentiments</a>
             <a href="/MostSpokenWord">Most Spoken Word</a>
-            <a class="active" href="/Trial">Trial</a>
+            <a class="active" href="/CitywiseHashtagsSentiments">Citywise Hashtags Sentiments</a>
         </div>
     </header>
 
@@ -33,14 +33,14 @@
 <form class="form-inline" method="POST" action="{{ url_for('test') }}">
   <div class="form-group">
     <div class="input-group">
-        <span class="input-group-addon">Please select</span>
+        <span class="input-group-addon"><a>Please select</a></span>
 
 <select name="comp_select" methods="GET" action="/" onchange='this.form.submit()'>
-  <option value="{{colours[0]}}" >{{colours[0]}}</option>
-    <option value="value" selected>Kuch lele</option>
+  <option value="{{dropdown_val[0]}}" >{{dropdown_val[0]}}</option>
+<!--    <option value="value" selected>Select City</option>-->
 
-  {% for colour in colours[1:] %}
-    <option value="{{colour}}">{{colour}}</option>
+  {% for data in dropdown_val[1:] %}
+    <option value="{{data}}">{{data}}</option>
   {% endfor %}
 
 </select>
@@ -49,7 +49,7 @@
 </form>
 
 <!--  HEADER TEXT-->
-    <h1 id="movtxt_1">Top Tweeting Cities</h1>
+    <h1 id="movtxt_1">Top City Hashtags </h1>
 
     <!-- BAR CHART CANVAS ELEMENT -->
     <div class="chart-container" style="float: left; width: 100%; overflow:hidden;">
@@ -105,48 +105,6 @@
 
       });
     </script>
-
-<!--    <script>-->
-
-<!--    // Define data set for all charts-->
-<!--let dataBaby = [{% for item in values %}-->
-<!--                      {{item}},-->
-<!--                    {% endfor %}];-->
-<!--myData = {-->
-<!--        labels: [{% for item in labels %}-->
-<!--                   "{{item}}",-->
-<!--                  {% endfor %}],-->
-<!--        datasets: [-->
-<!--          {-->
-<!--            label: "Data, baby!",-->
-<!--            fill: false,-->
-<!--            backgroundColor: 'rgb(190, 99, 255, 0.25)',-->
-<!--            borderColor: 'rgb(190, 99, 255)',-->
-<!--            data: dataBaby,-->
-<!--          },-->
-<!--         ]-->
-<!--    };-->
-
-<!--// Default chart defined with type: 'line'-->
-<!--Chart.defaults.global.defaultFontFamily = "monospace";-->
-<!--var ctx = document.getElementById('myChart').getContext('2d');-->
-<!--var myChart = new Chart(ctx, {-->
-<!--    type: 'bar',-->
-<!--    data: myData-->
-<!--});-->
-
-
-<!--        // Function runs on chart type select update-->
-<!--function updateChartType() {-->
-<!--  // Since you can't update chart type directly in Charts JS you must destroy original chart and rebuild-->
-<!--   myChart.destroy();-->
-<!--   myChart = new Chart(ctx, {-->
-<!--     type: document.getElementById("chartType").value,-->
-<!--     data: myData,-->
-<!--   });-->
-<!--};-->
-
-<!--    </script>-->
 
 </body>
 </html>
