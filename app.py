@@ -229,10 +229,15 @@ def MostSpokenWord():
 # TRIAL-----------------------------------------------------------------------------------------------------------
 # TRIAL-----------------------------------------------------------------------------------------------------------
 
-@app.route('/Trial', methods=['GET'])  #DROP DOWN VALUES
-def dropdown():
+@app.route("/CitywiseHashtagsSentiments", methods=['GET', 'POST'])
+def test():
 
-    print('Calling Drop down values ')
+    print('Trial Page')
+
+    #GETTING VALUES FROM THE DROP DOWN USING REQUEST
+    select = request.form.get('comp_select')
+
+    print(select)
 
     # CALLING CSV FILE IN A DATAFRAME
     dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
@@ -240,35 +245,59 @@ def dropdown():
     # MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
 
-    # FILTER DATA BY WORD IN DATAFRAMES
-    #FTR_data = dataframe[(dataframe.Cities == "Mumbai")]
+#------------------------------------------------DROP DOWN DATA CALLS START-----------------------------------------
 
     # EXTRACTING COLOUMNS DATA FROM DATAFRAME
-    data = dataframe[['Cities', 'Sentiment']]
+    data_Dropdown = dataframe[['Cities', 'Hashtags']]
+
+    data_Dropdown_1 = data_Dropdown.groupby(['Cities']).count().reset_index()
+
+#------------------------------------------------DROP DOWN DATA CALLS END-------------------------------------------
+
+    # FILTER DATA BY WORD IN DATAFRAMES
+    FTR_data = dataframe[(dataframe.Cities == select)]
+
+    # EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    data = FTR_data[['Cities', 'Hashtags', 'Sentiment_Rating']]
 
     # GROUPING BY CITIES
-    data_1 = data.groupby('Cities').count().reset_index()
+    data_gd = data.groupby(['Hashtags']).sum().reset_index()
 
+    # print(data_gd)
+
+    print('Trial Datafame Generated')
+
+    # PARAMETERS
+    datalist = []
     datalist_1 = []
+    datalist_2 = []
+
+    # ITTERTATING ROWS CITY COUNT
+    for rows in data_gd.get_values():
+        datalist.append(int(rows[1]))
 
     # ITTERATING ROWS FOR CITY NAMES
-    for rows in data_1.get_values():
-        datalist_1.append(str(rows[0]).replace(" ", " "))
+    for rows in data_gd.get_values():
+        datalist_1.append(str(rows[0]).replace(" ", ""))
 
-    dropdown_val = datalist_1
+    # ITTERATING ROWS FOR CITY NAMES FOR DROPDOWN
+    for rows in data_Dropdown_1.get_values():
+        datalist_2.append(str(rows[0]).replace(" ", ""))
 
-    print('Drop Down Values called')
+    # PASSING PARAMENTERS
+    legend = 'Tweets'
+    Sentiment = datalist
+    Cities = datalist_1
+    dropdown_val = datalist_2
+
+    print('Trial Datafame Values Passed')
 
     # RETURNING THE CHART.JS VALUES
-    return render_template('CitywiseHashtagsSentiments.html', dropdown_val=dropdown_val)
+    return render_template('CitywiseHashtagsSentiments.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
 
-
-# @app.route("/Trail" , methods=['GET', 'POST'])
-# def test():
-#     select = request.form.get('comp_select')
-#     print(select)
-#     return(str(select)) # just to see what select is
-
+# TRIAL-----------------------------------------------------------------------------------------------------------
+# TRIAL-----------------------------------------------------------------------------------------------------------
+# TRIAL-----------------------------------------------------------------------------------------------------------
 
 @app.route("/CitywiseHashtagsSentiments", methods=['GET', 'POST'])
 def test():
@@ -334,12 +363,12 @@ def test():
     print('Trial Datafame Values Passed')
 
     # RETURNING THE CHART.JS VALUES
-    return render_template('CitywiseHashtagsSentiments.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val)
+    return render_template('CitywiseHashtagsSentiments.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
+
 
 # TRIAL-----------------------------------------------------------------------------------------------------------
 # TRIAL-----------------------------------------------------------------------------------------------------------
 # TRIAL-----------------------------------------------------------------------------------------------------------
-
 
 #MAIN CALL FUNCTION CALLING FLASK=__NAME_
 if __name__ == "__main__":

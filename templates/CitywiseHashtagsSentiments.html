@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<!--  HEADER WITH USER CSS -->
 <head>
+    <!--  METADATA-->
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    TITLE-->
     <title>Citywise Hashtags Sentiments</title>
-       <!--    CHART.JS CSS -->
+    <!--    CHART.JS CSS -->
     <script src='static/js/Chart.min.js'></script>
-
-      <!--    USER DEFINED CSS -->
+    <!--    USER DEFINED CSS -->
     <link rel="stylesheet" href="/static/css/main.css">
 </head>
 
@@ -24,7 +27,7 @@
         </div>
     </header>
 
-
+<!--BODY-->
 <body>
 
     <div class="content">
@@ -37,7 +40,7 @@
 
 <select name="comp_select" methods="GET" action="/" onchange='this.form.submit()'>
   <option value="{{dropdown_val[0]}}" >{{dropdown_val[0]}}</option>
-<!--    <option value="value" selected>Select City</option>-->
+    <option value="value" selected>{{selected_value}}</option>
 
   {% for data in dropdown_val[1:] %}
     <option value="{{data}}">{{data}}</option>
@@ -49,9 +52,9 @@
 </form>
 
 <!--  HEADER TEXT-->
-    <h1 id="movtxt_1">Top City Hashtags </h1>
+    <h1 id="movtxt_1">Top City Hashtags {{selected_value}}</h1>
 
-    <!-- BAR CHART CANVAS ELEMENT -->
+<!--    CHART CANVAS WITH DIVISION-->
     <div class="chart-container" style="float: left; width: 100%; overflow:hidden;">
     <canvas id="myChart" width="1400" height="600"></canvas>
     <p>Top Hashtags </p>
