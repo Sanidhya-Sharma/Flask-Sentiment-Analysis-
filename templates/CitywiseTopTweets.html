@@ -2,52 +2,71 @@
 <html lang="en">
 
 <!--  HEADER WITH USER CSS -->
-  <head>
-      <!--  METADATA-->
-    <meta charset="utf-8">
+<head>
+    <!--  METADATA-->
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--    TITLE-->
-    <title>Hashtags Sentiments</title>
-    <!--    #CHART CSS-->
+    <title>Citywise Top Tweets</title>
+    <!--    CHART.JS CSS -->
     <script src='static/js/Chart.min.js'></script>
-      <!--    #USER CSS-->
+    <!--    USER DEFINED CSS -->
     <link rel="stylesheet" href="/static/css/main.css">
-  </head>
+</head>
 
-<!--  #NAVIGATION BAR-->
+<!--    HEADER WITH NAVIGATION BAR-->
     <header>
         <div class="sidebar">
         <a href="/home">Home</a>
         <a href="/CitySentiments">City Sentiments</a>
-        <a class="active" href="/HashtagSentiment">Hashtag Sentiment</a>
+        <a href="/HashtagSentiment">Hashtag Sentiment</a>
         <a href="/TopTweetingCities">Top Tweeting Cities</a>
         <a href="/OverallSentiments">Overall Sentiments</a>
             <a href="/MostSpokenWord">Most Spoken Word</a>
             <a href="/CitywiseHashtagsSentiments">Citywise Hashtags Sentiments</a>
-            <a href="/CitywiseTopTweets">Citywise Top Tweets</a>
+            <a class="active" href="/CitywiseTopTweets">Citywise Top Tweets</a>
         </div>
     </header>
 
-
-<!--  #BODY-->
-  <body>
+<!--BODY-->
+<body>
 
     <div class="content">
 
-    <h1 id="movtxt_1">Hashtag Sentiments Graph</h1>
+<!---DROP DOWN AND BUTTON --->
+<form class="form-inline" method="POST" action="{{ url_for('CitywiseTopTweets') }}">
+  <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon"><a>Please select</a></span>
 
-<!--#CANVAS FOR GRAPH WITH SCROLLABLE DIVISION-->
-    <div class="chart-container" style="position: relative; width: 100%; overflow:scroll;">
-    <canvas id="myChart" width="30000" height="600"></canvas>
-        <p id="caption">Hashtags Sentiments</p>
+<select name="comp_select" methods="GET" action="/" onchange='this.form.submit()'>
+  <option value="{{dropdown_val[0]}}" >{{dropdown_val[0]}}</option>
+    <option value="value" selected>{{selected_value}}</option>
+
+  {% for data in dropdown_val[1:] %}
+    <option value="{{data}}">{{data}}</option>
+  {% endfor %}
+
+</select>
+</div>
+  </div>
+</form>
+
+<!--  HEADER TEXT-->
+    <h1 id="movtxt_1">Top City Hashtags {{selected_value}}</h1>
+
+<!--    CHART CANVAS WITH DIVISION-->
+    <div class="chart-container" style="float: left; width: 100%; overflow:hidden;">
+    <canvas id="myChart" width="1400" height="600"></canvas>
+    <p>Top Hashtags </p>
     </div>
- </div>
 
-<!--#GRAPH JAVA SCRIPT-->
+    </div>
+<!--  JAVA SCRIPTS -->
     <script>
       // Global parameters:
       // do not resize the chart canvas when its container does (keep at 600x400px)
-      Chart.defaults.global.responsive = false;
+      Chart.defaults.global.responsive = true;
 
       // define the chart data
       var chartData = {
@@ -87,9 +106,9 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: chartData,
+
       });
     </script>
 
-  </body>
-
+</body>
 </html>

@@ -24,6 +24,7 @@
         <a href="/OverallSentiments">Overall Sentiments</a>
             <a href="/MostSpokenWord">Most Spoken Word</a>
             <a class="active" href="/CitywiseHashtagsSentiments">Citywise Hashtags Sentiments</a>
+            <a href="/CitywiseTopTweets">Citywise Top Tweets</a>
         </div>
     </header>
 
@@ -33,7 +34,7 @@
     <div class="content">
 
 <!---DROP DOWN AND BUTTON --->
-<form class="form-inline" method="POST" action="{{ url_for('test') }}">
+<form class="form-inline" method="POST" action="{{ url_for('CitywiseHashtagsSentiments') }}">
   <div class="form-group">
     <div class="input-group">
         <span class="input-group-addon"><a>Please select</a></span>

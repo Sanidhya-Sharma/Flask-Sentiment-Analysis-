@@ -225,14 +225,10 @@ def MostSpokenWord():
     return render_template('MostSpokenWord.html', values=Count, labels=Words, legend=legend)
 
 
-# TRIAL-----------------------------------------------------------------------------------------------------------
-# TRIAL-----------------------------------------------------------------------------------------------------------
-# TRIAL-----------------------------------------------------------------------------------------------------------
-
 @app.route("/CitywiseHashtagsSentiments", methods=['GET', 'POST'])
-def test():
+def CitywiseHashtagsSentiments():
 
-    print('Trial Page')
+    print('Citywise Hashtags Sentiments Page')
 
     #GETTING VALUES FROM THE DROP DOWN USING REQUEST
     select = request.form.get('comp_select')
@@ -265,7 +261,7 @@ def test():
 
     # print(data_gd)
 
-    print('Trial Datafame Generated')
+    print('Citywise Hashtags Sentiments Datafame Generated')
 
     # PARAMETERS
     datalist = []
@@ -290,19 +286,16 @@ def test():
     Cities = datalist_1
     dropdown_val = datalist_2
 
-    print('Trial Datafame Values Passed')
+    print('Citywise Hashtags Sentiments Datafame Values Passed')
 
     # RETURNING THE CHART.JS VALUES
     return render_template('CitywiseHashtagsSentiments.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
 
-# TRIAL-----------------------------------------------------------------------------------------------------------
-# TRIAL-----------------------------------------------------------------------------------------------------------
-# TRIAL-----------------------------------------------------------------------------------------------------------
 
-@app.route("/CitywiseHashtagsSentiments", methods=['GET', 'POST'])
-def test():
+@app.route("/CitywiseTopTweets", methods=['GET', 'POST'])
+def CitywiseTopTweets():
 
-    print('Trial Page')
+    print('Citywise Top Tweets Page')
 
     #GETTING VALUES FROM THE DROP DOWN USING REQUEST
     select = request.form.get('comp_select')
@@ -315,27 +308,29 @@ def test():
     # MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
 
-#------------------------------------------------DROP DOWN DATA CALLS START-----------------------------------------
+#------------------------------------------------DROP DOWN DATA CALLS START------------------------------------------------------------------------------
 
     # EXTRACTING COLOUMNS DATA FROM DATAFRAME
     data_Dropdown = dataframe[['Cities', 'Hashtags']]
 
     data_Dropdown_1 = data_Dropdown.groupby(['Cities']).count().reset_index()
 
-#------------------------------------------------DROP DOWN DATA CALLS END-------------------------------------------
+#------------------------------------------------DROP DOWN DATA CALLS END---------------------------------------------------------------------------------
 
     # FILTER DATA BY WORD IN DATAFRAMES
     FTR_data = dataframe[(dataframe.Cities == select)]
 
     # EXTRACTING COLOUMNS DATA FROM DATAFRAME
-    data = FTR_data[['Cities', 'Hashtags', 'Sentiment_Rating']]
+    data = FTR_data[['Hashtags','Cities']]
 
     # GROUPING BY CITIES
-    data_gd = data.groupby(['Hashtags']).sum().reset_index()
+    data_gd = data.groupby(['Hashtags']).count().reset_index()
 
-    # print(data_gd)
+    data_gd2 = data_gd.groupby(['Hashtags']).sum().reset_index()
 
-    print('Trial Datafame Generated')
+    #print(data_gd)
+
+    print('Citywise Top Tweets Datafame Generated')
 
     # PARAMETERS
     datalist = []
@@ -343,11 +338,13 @@ def test():
     datalist_2 = []
 
     # ITTERTATING ROWS CITY COUNT
-    for rows in data_gd.get_values():
+    for rows in data_gd2.get_values():
         datalist.append(int(rows[1]))
 
+    print(datalist)
+
     # ITTERATING ROWS FOR CITY NAMES
-    for rows in data_gd.get_values():
+    for rows in data_gd2.get_values():
         datalist_1.append(str(rows[0]).replace(" ", ""))
 
     # ITTERATING ROWS FOR CITY NAMES FOR DROPDOWN
@@ -360,16 +357,12 @@ def test():
     Cities = datalist_1
     dropdown_val = datalist_2
 
-    print('Trial Datafame Values Passed')
+    print('Citywise Top Tweets Datafame Values Passed')
 
     # RETURNING THE CHART.JS VALUES
-    return render_template('CitywiseHashtagsSentiments.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
+    return render_template('CitywiseTopTweets.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
 
 
-# TRIAL-----------------------------------------------------------------------------------------------------------
-# TRIAL-----------------------------------------------------------------------------------------------------------
-# TRIAL-----------------------------------------------------------------------------------------------------------
-
-#MAIN CALL FUNCTION CALLING FLASK=__NAME_
+#MAIN CALL FUNCTION CALLING FLASK =_NAME_
 if __name__ == "__main__":
     app.run(host='192.168.2.111', port=5000 , debug=True)
