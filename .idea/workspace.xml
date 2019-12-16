@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="55f5b4d8-9a41-48ea-b4de-99bc7918055e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/CitySentiments.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/CitySentiments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/CitywiseHashtagsSentiments.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/CitywiseHashtagsSentiments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/HashtagSentiment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/HashtagSentiment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/MostSpokenWord.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/MostSpokenWord.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/OverallSentiments.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/OverallSentiments.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/TopTweetingCities.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/TopTweetingCities.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

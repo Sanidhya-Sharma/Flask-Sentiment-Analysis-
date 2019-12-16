@@ -10,7 +10,7 @@ app = Flask(__name__)
 #DEFAULT ROUTING
 @app.route('/')
 
-# ROUTING TO HOME
+#ROUTING TO HOME
 @app.route('/home')
 def home():
     print('Home Page')
@@ -68,13 +68,13 @@ def CitySentiments():
 
     print('City Sentiments Page')
 
-    # CALLING CSV FILE IN A DATAFRAME
+    #CALLING CSV FILE IN A DATAFRAME
     dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
 
-    # MAKING COLOUMNS FOR A IMPORTED CSV FILE
+    #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
 
-    # EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    #EXTRACTING COLOUMNS DATA FROM DATAFRAME
     data = dataframe[['Cities', 'Sentiment_Rating']]
 
     #GROUPING BY CITIES WITH MEAN OF INDEXES
@@ -82,7 +82,7 @@ def CitySentiments():
 
     print('City Sentiments Datafame Generated')
 
-    # PARAMETERS
+    #PARAMETERS
     datalist = []
     datalist_1 = []
 
@@ -98,7 +98,7 @@ def CitySentiments():
 
     print('City Sentiments Datafame Values Passed')
 
-    # RETURNING THE CHART.JS VALUES
+    #RETURNING THE CHART.JS VALUES
     return render_template('CitySentiments.html', values=Sentiment, labels=Cities, legend=legend)
 
 
@@ -107,29 +107,29 @@ def TopTweetingCities():
 
     print('Top Tweeting Cities Page')
 
-    # CALLING CSV FILE IN A DATAFRAME
+    #CALLING CSV FILE IN A DATAFRAME
     dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
 
-    # MAKING COLOUMNS FOR A IMPORTED CSV FILE
+    #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
 
-    # EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    #EXTRACTING COLOUMNS DATA FROM DATAFRAME
     data = dataframe[['Cities','Hashtags']]
 
-    # GROUPING BY CITIES
+    #GROUPING BY CITIES
     data_gd = data.groupby(['Cities']).count().reset_index()
 
     print('Top Tweeting Cities Datafame Generated')
 
-    # PARAMETERS
+    #PARAMETERS
     datalist = []
     datalist_1 = []
 
-    # ITTERTATING ROWS CITY COUNT
+    #ITTERTATING ROWS CITY COUNT
     for rows in data_gd.get_values():
         datalist.append(int(rows[1]))
 
-    # ITTERATING ROWS FOR CITY NAMES
+    #ITTERATING ROWS FOR CITY NAMES
     for rows in data_gd.get_values():
         datalist_1.append(str(rows[0]).replace(" ", ""))
 
@@ -140,7 +140,7 @@ def TopTweetingCities():
 
     print('Top Tweeting Cities Datafame Values Passed')
 
-    # RETURNING THE CHART.JS VALUES
+    #RETURNING THE CHART.JS VALUES
     return render_template('TopTweetingCities.html', values=Sentiments, labels=Cities, legend=legend)
 
 
@@ -149,40 +149,40 @@ def OverallSentiments():
 
     print('Overall Sentiments Page')
 
-    # CALLING CSV FILE IN A DATAFRAME
+    #CALLING CSV FILE IN A DATAFRAME
     dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
 
-    # MAKING COLOUMNS FOR A IMPORTED CSV FILE
+    #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
 
-    # EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    #EXTRACTING COLOUMNS DATA FROM DATAFRAME
     data = dataframe[['Sentiment','Cities']]
 
-    # GROUPING BY CITIES
+    #GROUPING BY CITIES
     data_gd = data.groupby(['Sentiment']).count().reset_index()
 
     print('Overall Sentiments Datafame Generated')
 
-    # PARAMETERS
+    #PARAMETERS
     datalist = []
     datalist_1 = []
 
-    # ITTERTATING ROWS CITY COUNT
+    #ITTERTATING ROWS CITY COUNT
     for rows in data_gd.get_values():
         datalist.append(int(rows[1]))
 
-    # ITTERATING ROWS FOR CITY NAMES
+    #ITTERATING ROWS FOR CITY NAMES
     for rows in data_gd.get_values():
         datalist_1.append(str(rows[0]).replace(" ", "_"))
 
-    # PASSING PARAMENTERS
+    #PASSING PARAMENTERS
     legend = 'Tweets'
     Sentiment = datalist
     Cities = datalist_1
 
     print('Overall Sentiments Datafame Passed ')
 
-    # RETURNING THE CHART.JS VALUES
+    #RETURNING THE CHART.JS VALUES
     return render_template('OverallSentiments.html', values=Sentiment, labels=Cities, legend=legend)
 
 
@@ -194,34 +194,34 @@ def MostSpokenWord():
     #CALLING CSV FILE IN A DATAFRAME
     dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\MostSpokenWord.csv")
 
-    # MAKING COLOUMNS FOR A IMPORTED CSV FILE
+    #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Word', 'Count']
 
-    # extracting greatest 5
+    #extracting greatest 5
     large30 = dataframe.nlargest(30, "Count")
 
     print('Most Spoken Word Datafame Generated')
 
-    # PARAMETERS
+    #PARAMETERS
     datalist = []
     datalist_1 = []
 
-    # ITTERTATING ROWS CITY COUNT
+    #ITTERTATING ROWS CITY COUNT
     for rows in large30.get_values():
         datalist.append(int(rows[1]))
 
-    # ITTERATING ROWS FOR CITY NAMES
+    #ITTERATING ROWS FOR CITY NAMES
     for rows in large30.get_values():
         datalist_1.append(str(rows[0]).replace(" ", " "))
 
-    # PASSING PARAMENTERS
+    #PASSING PARAMENTERS
     legend = 'Count'
     Count = datalist
     Words = datalist_1
 
     print('Most Spoken Word Datafame Values Passed')
 
-    # RETURNING THE CHART.JS VALUES
+    #RETURNING THE CHART.JS VALUES
     return render_template('MostSpokenWord.html', values=Count, labels=Words, legend=legend)
 
 
@@ -235,60 +235,60 @@ def CitywiseHashtagsSentiments():
 
     print(select)
 
-    # CALLING CSV FILE IN A DATAFRAME
+    #CALLING CSV FILE IN A DATAFRAME
     dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
 
-    # MAKING COLOUMNS FOR A IMPORTED CSV FILE
+    #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
 
-#------------------------------------------------DROP DOWN DATA CALLS START-----------------------------------------
+#------------------------------------------------DROP DOWN DATA CALLS START-----------------------------------------------------------------------
 
-    # EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    #EXTRACTING COLOUMNS DATA FROM DATAFRAME
     data_Dropdown = dataframe[['Cities', 'Hashtags']]
 
     data_Dropdown_1 = data_Dropdown.groupby(['Cities']).count().reset_index()
 
-#------------------------------------------------DROP DOWN DATA CALLS END-------------------------------------------
+#------------------------------------------------DROP DOWN DATA CALLS END-------------------------------------------------------------------------
 
-    # FILTER DATA BY WORD IN DATAFRAMES
+    #FILTER DATA BY WORD IN DATAFRAMES
     FTR_data = dataframe[(dataframe.Cities == select)]
 
-    # EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    #EXTRACTING COLOUMNS DATA FROM DATAFRAME
     data = FTR_data[['Cities', 'Hashtags', 'Sentiment_Rating']]
 
-    # GROUPING BY CITIES
+    #GROUPING BY CITIES
     data_gd = data.groupby(['Hashtags']).sum().reset_index()
 
-    # print(data_gd)
+    #print(data_gd)
 
     print('Citywise Hashtags Sentiments Datafame Generated')
 
-    # PARAMETERS
+    #PARAMETERS
     datalist = []
     datalist_1 = []
     datalist_2 = []
 
-    # ITTERTATING ROWS CITY COUNT
+    #ITTERTATING ROWS CITY COUNT
     for rows in data_gd.get_values():
         datalist.append(int(rows[1]))
 
-    # ITTERATING ROWS FOR CITY NAMES
+    #ITTERATING ROWS FOR CITY NAMES
     for rows in data_gd.get_values():
         datalist_1.append(str(rows[0]).replace(" ", ""))
 
-    # ITTERATING ROWS FOR CITY NAMES FOR DROPDOWN
+    #ITTERATING ROWS FOR CITY NAMES FOR DROPDOWN
     for rows in data_Dropdown_1.get_values():
-        datalist_2.append(str(rows[0]).replace(" ", ""))
+        datalist_2.append(str(rows[0]).replace(" ", " "))
 
-    # PASSING PARAMENTERS
-    legend = 'Tweets'
+    #PASSING PARAMENTERS
+    legend = 'Hashtag'
     Sentiment = datalist
     Cities = datalist_1
     dropdown_val = datalist_2
 
     print('Citywise Hashtags Sentiments Datafame Values Passed')
 
-    # RETURNING THE CHART.JS VALUES
+    #RETURNING THE CHART.JS VALUES
     return render_template('CitywiseHashtagsSentiments.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
 
 
@@ -302,28 +302,28 @@ def CitywiseTopTweets():
 
     print(select)
 
-    # CALLING CSV FILE IN A DATAFRAME
+    #CALLING CSV FILE IN A DATAFRAME
     dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
 
-    # MAKING COLOUMNS FOR A IMPORTED CSV FILE
+    #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
 
 #------------------------------------------------DROP DOWN DATA CALLS START------------------------------------------------------------------------------
 
-    # EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    #EXTRACTING COLOUMNS DATA FROM DATAFRAME
     data_Dropdown = dataframe[['Cities', 'Hashtags']]
 
     data_Dropdown_1 = data_Dropdown.groupby(['Cities']).count().reset_index()
 
 #------------------------------------------------DROP DOWN DATA CALLS END---------------------------------------------------------------------------------
 
-    # FILTER DATA BY WORD IN DATAFRAMES
+    #FILTER DATA BY WORD IN DATAFRAMES
     FTR_data = dataframe[(dataframe.Cities == select)]
 
-    # EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    #EXTRACTING COLOUMNS DATA FROM DATAFRAME
     data = FTR_data[['Hashtags','Cities']]
 
-    # GROUPING BY CITIES
+    #GROUPING BY CITIES
     data_gd = data.groupby(['Hashtags']).count().reset_index()
 
     data_gd2 = data_gd.groupby(['Hashtags']).sum().reset_index()
@@ -332,26 +332,26 @@ def CitywiseTopTweets():
 
     print('Citywise Top Tweets Datafame Generated')
 
-    # PARAMETERS
+    #PARAMETERS
     datalist = []
     datalist_1 = []
     datalist_2 = []
 
-    # ITTERTATING ROWS CITY COUNT
+    #ITTERTATING ROWS CITY COUNT
     for rows in data_gd2.get_values():
         datalist.append(int(rows[1]))
 
     print(datalist)
 
-    # ITTERATING ROWS FOR CITY NAMES
+    #ITTERATING ROWS FOR CITY NAMES
     for rows in data_gd2.get_values():
         datalist_1.append(str(rows[0]).replace(" ", ""))
 
-    # ITTERATING ROWS FOR CITY NAMES FOR DROPDOWN
+    #ITTERATING ROWS FOR CITY NAMES FOR DROPDOWN
     for rows in data_Dropdown_1.get_values():
-        datalist_2.append(str(rows[0]).replace(" ", ""))
+        datalist_2.append(str(rows[0]).replace(" ", " "))
 
-    # PASSING PARAMENTERS
+    #PASSING PARAMENTERS
     legend = 'Tweets'
     Sentiment = datalist
     Cities = datalist_1
@@ -359,10 +359,10 @@ def CitywiseTopTweets():
 
     print('Citywise Top Tweets Datafame Values Passed')
 
-    # RETURNING THE CHART.JS VALUES
+    #RETURNING THE CHART.JS VALUES
     return render_template('CitywiseTopTweets.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
 
 
 #MAIN CALL FUNCTION CALLING FLASK =_NAME_
 if __name__ == "__main__":
-    app.run(host='192.168.2.111', port=5000 , debug=True)
+    app.run(host='192.168.2.111', port=5000, debug=True)
