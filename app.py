@@ -202,6 +202,10 @@ def TopHashtags():
 
     #GROUPING BY CITIES
     data_gd = data.groupby(['Hashtags']).count().reset_index()
+
+    #extracting greatest 30
+    large30 = data_gd.nlargest(500, "Cities")
+
     print('Top Hashtags Datafame Generated')
 
     #PARAMETERS
@@ -209,11 +213,11 @@ def TopHashtags():
     datalist_1 = []
 
     #ITTERTATING ROWS CITY COUNT
-    for rows in data_gd.get_values():
+    for rows in large30.get_values():
         datalist.append(int(rows[1]))
 
     #ITTERATING ROWS FOR CITY NAMES
-    for rows in data_gd.get_values():
+    for rows in large30.get_values():
         datalist_1.append(str(rows[0]).replace(" ", "_"))
 
     #PASSING PARAMENTERS
@@ -239,7 +243,7 @@ def MostSpokenWord():
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Word', 'Count']
 
-    #extracting greatest 5
+    #extracting greatest 30
     large30 = dataframe.nlargest(30, "Count")
 
     print('Most Spoken Word Datafame Generated')
