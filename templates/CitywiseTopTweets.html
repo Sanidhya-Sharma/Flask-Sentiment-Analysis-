@@ -22,6 +22,7 @@
         <a href="/HashtagSentiment">Hashtag Sentiment</a>
         <a href="/TopTweetingCities">Top Tweeting Cities</a>
         <a href="/OverallSentiments">Overall Sentiments</a>
+            <a href="/TopHashtags">Top Hashtags</a>
             <a href="/MostSpokenWord">Most Spoken Word</a>
             <a href="/CitywiseHashtagsSentiments">Citywise Hashtags Sentiments</a>
             <a class="active" href="/CitywiseTopTweets">Citywise Top Tweets</a>
@@ -53,12 +54,12 @@
 </form>
 
 <!--  HEADER TEXT-->
-    <h1 id="movtxt_1">Top City Hashtags {{selected_value}}</h1>
+    <h1 id="movtxt_1">Citywise Hashtags {{selected_value}}</h1>
 
 <!--    CHART CANVAS WITH DIVISION-->
     <div class="chart-container" style="float: left; width: 100%; overflow:hidden;">
     <canvas id="myChart" width="1400" height="600"></canvas>
-    <p>Top Hashtags </p>
+    <p>Top Related Tweets </p>
     </div>
 
     </div>
@@ -67,6 +68,13 @@
       // Global parameters:
       // do not resize the chart canvas when its container does (keep at 600x400px)
       Chart.defaults.global.responsive = true;
+
+<!--TO MAKE THE CHART START FROM 0-->
+      Chart.scaleService.updateScaleDefaults('linear', {
+    ticks: {
+        min: 0
+    }
+});
 
       // define the chart data
       var chartData = {

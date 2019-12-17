@@ -1,309 +1,261 @@
-#B,Mumbai,0.6666666666666666,Positive
-#S,Delhi,2.0,Positive
-#S,Hyderabad,2.0,Positive
-#a,Delhi,3.5,Strong Positive
-#f,Hyderabad,1.0,Positive
-#AI,Mumbai,3.0,Strong Positive
+#AI,Delhi,1.0,Positive
 #In,Kolkata,1.5,Positive
-#MP,Mumbai,1.0,Positive
-#RT,Ahmedabad,3.0,Strong Positive
-#RT,Hyderabad,0.75,Positive
-#dj,Hyderabad,3.0,Strong Positive
-#fd,Pune,1.0,Positive
-#ALM,Hyderabad,-1.0,negative
+#RT,Hyderabad,1.5,Positive
+#li,Hyderabad,3.0,Strong Positive
 #APR,Hyderabad,3.0,Strong Positive
+#CRM,Mumbai,1.0,Positive
+#Cow,Ahmedabad,1.5,Positive
+#ERP,Hyderabad,2.0,Positive
 #ESI,Delhi,2.0,Positive
+#FDI,Gurgaon,-0.5,negative
 #GST,Mumbai,-2.0,negative
-#IBC,Kolkata,-1.5,negative
-#MLA,Mumbai,1.0,Positive
 #MOA,Mumbai,2.5,Positive
-#NYC,Mumbai,3.0,Strong Positive
-#djs,Hyderabad,3.0,Strong Positive
-#hom,Delhi,4.0,Strong Positive
+#WTO,Mumbai,-2.0,negative
 #job,Chennai,-1.0,negative
-#ltc,Mumbai,2.0,Positive
 #Asia,Mumbai,-3.0,Strong negative
-#Asim,Mumbai,-3.0,Strong negative
-#BB13,Delhi,1.05,Positive
-#BB13,Jaipur,1.0,Positive
-#BB13,Mumbai,0.8,Positive
-#BB13,Chennai,1.0,Positive
-#BB13,Gurgaon,1.0,Positive
-#BB13,Kolkata,1.0,Positive
-#BB13,Lucknow,0.7142857142857143,Positive
-#BB13,Navi Mumbai,1.0,Positive
-#BB13,Visakhapatnam,1.0,Positive
-#Ciaz,Pune,2.0,Positive
+#BB13,Delhi,1.0,Positive
+#BB13,Mumbai,0.0,neutral
 #Debt,Mumbai,-2.0,negative
 #Home,Mumbai,3.0,Strong Positive
 #Life,Pune,1.0,Positive
 #Life,Hyderabad,1.0,Positive
-#ULIP,Delhi,2.5,Positive
-#arti,Hyderabad,1.0,Positive
+#Pune,Delhi,2.0,Positive
+#ULIP,Delhi,1.5,Positive
 #cars,Mumbai,-1.0,negative
-#data,Mumbai,0.0,neutral
 #defi,Mumbai,0.3333333333333333,Positive
 #drmb,Kolkata,2.0,Positive
-#gdpr,Chennai,1.0,Positive
 #jobs,Mumbai,-2.0,negative
-#kids,Delhi,3.0,Strong Positive
 #luxe,Kolkata,2.0,Positive
 #risk,Mumbai,-2.0,negative
 #scam,Mumbai,0.0,neutral
-#team,Mumbai,2.0,Positive
 #work,Pune,1.0,Positive
-#ASSim,Delhi,0.125,Positive
-#Asiim,Delhi,0.5,Positive
-#Delhi,Delhi,0.5,Positive
-#Divum,Mumbai,2.0,Positive
-#Dubai,Delhi,3.0,Strong Positive
+#ASSim,Delhi,0.0,neutral
+#Delhi,Delhi,-1.5,negative
 #Goals,Pune,1.0,Positive
 #Goals,Hyderabad,1.0,Positive
 #IRDAI,Pune,1.0,Positive
 #IRDAI,Mumbai,1.0,Positive
-#India,Delhi,-1.0,negative
-#India,Mumbai,0.0,neutral
-#India,Hyderabad,2.0,Positive
+#IRDAI,Hyderabad,-0.3333333333333333,negative
+#India,Mumbai,1.0,Positive
 #Kochi,Delhi,-1.0,negative
-#Mahir,Delhi,2.0,Positive
-#Nifty,Mumbai,-0.3333333333333333,negative
-#PNBHF,Pune,1.0,Positive
+#Nifty,Mumbai,-3.0,Strong negative
+#Pappu,Mumbai,2.0,Positive
+#Paras,Noida,0.0,neutral
+#Paras,Mumbai,0.0,neutral
+#Paras,Kolkata,0.0,neutral
 #Rashm,Kolkata,0.0,neutral
+#River,Mumbai,-1.0,negative
 #Style,Hyderabad,2.0,Positive
 #TSRTC,Hyderabad,3.0,Strong Positive
+#TajLa,Mumbai,0.5,Positive
+#Teeth,Varanasi,-2.0,negative
 #Venus,Chennai,3.0,Strong Positive
-#Watch,Patna,2.0,Positive
-#Watch,Gurgaon,-1.0,negative
+#Watch,Hyderabad,2.0,Positive
 #banks,Hyderabad,-2.0,negative
 #cover,Pune,1.0,Positive
-#fraud,Mumbai,0.0,neutral
-#homes,Pune,-0.5,negative
 #iffco,Delhi,-2.0,negative
-#paras,Mumbai,-2.0,negative
-#sound,Hyderabad,3.0,Strong Positive
-#topdj,Hyderabad,3.0,Strong Positive
+#money,Mumbai,-1.0,negative
 #vasai,Mumbai,-1.0,negative
 #APSRTC,Hyderabad,3.0,Strong Positive
-#Family,Hyderabad,2.0,Positive
+#Abodes,Surat,-1.0,negative
+#Bangla,Kolkata,1.0,Positive
+#Credit,Mumbai,3.0,Strong Positive
 #Friday,Chennai,3.0,Strong Positive
+#GROWTH,Hyderabad,-0.3333333333333333,negative
+#GShock,Hyderabad,2.0,Positive
 #Garden,Delhi,2.0,Positive
 #Health,Delhi,3.0,Strong Positive
-#Indian,Mumbai,0.0,neutral
-#Indias,Mumbai,-2.0,negative
-#Jaipur,Delhi,2.0,Positive
+#JUSTIN,Mumbai,1.5,Positive
 #Luxury,Gurgaon,2.0,Positive
+#Luxury,Hyderabad,2.0,Positive
 #Media7,Pune,2.0,Positive
-#Online,Mumbai,1.0,Positive
+#Mumbai,Delhi,2.0,Positive
 #Shukla,Mumbai,1.5,Positive
 #Shukra,Chennai,3.0,Strong Positive
-#Update,Gurgaon,1.0,Positive
-#Vishal,Delhi,-0.6666666666666666,negative
-#Vishal,Mumbai,-1.0,negative
+#Spaces,Surat,-1.0,negative
+#Vishal,Delhi,-0.6,negative
 #Vishal,Kolkata,0.0,neutral
-#Zagato,Mumbai,1.0,Positive
 #author,Kolkata,2.0,Positive
+#boring,Delhi,1.0,Positive
 #cmohry,Gurgaon,-1.0,negative
 #design,Chennai,2.0,Positive
-#global,Mumbai,-0.5,negative
+#design,Hyderabad,2.5,Positive
 #growth,Mumbai,2.5,Positive
 #health,Delhi,-2.0,negative
 #health,Mumbai,-1.5,negative
 #health,Chennai,-1.0,negative
 #hotels,Mumbai,2.142857142857143,Positive
-#income,Mumbai,0.6666666666666666,Positive
-#london,Hyderabad,3.0,Strong Positive
-#luxure,Chennai,1.0,Positive
-#luxury,Pune,1.0,Positive
-#luxury,Mumbai,2.2222222222222223,Positive
+#income,Mumbai,-1.0,negative
+#luxury,Mumbai,2.125,Positive
 #luxury,Chennai,2.0,Positive
 #luxury,Kolkata,2.0,Positive
-#luxury,Hyderabad,1.5,Positive
-#luxury,Navi Mumbai,2.0,Positive
-#mahira,Mumbai,-2.0,negative
-#newage,Mumbai,2.0,Positive
+#luxury,Hyderabad,2.0,Positive
+#luxury,Navi Mumbai,1.5,Positive
 #office,Pune,1.0,Positive
 #planes,Delhi,0.0,neutral
 #shukla,Mumbai,-2.0,negative
 #travel,Mumbai,2.142857142857143,Positive
-#travel,Navi Mumbai,2.0,Positive
-#trends,Chennai,1.0,Positive
-#AndazAp,Delhi,2.0,Positive
-#AndazAp,Patna,2.0,Positive
-#AndazAp,Jaipur,2.0,Positive
-#AndazAp,Kanpur,2.0,Positive
-#AndazAp,Mumbai,2.0,Positive
-#AndazAp,Kolkata,2.0,Positive
-#AndazAp,Lucknow,2.0,Positive
+#travel,Navi Mumbai,1.5,Positive
+#Amazing,Hyderabad,2.0,Positive
+#Amazons,Mumbai,3.0,Strong Positive
+#Andheri,Delhi,2.0,Positive
+#AsimRia,Hyderabad,2.3333333333333335,Positive
 #Bigboss,Jaipur,-2.0,negative
 #Cheaper,Mumbai,4.0,Strong Positive
+#Chennai,Delhi,2.0,Positive
 #Fashion,Hyderabad,2.0,Positive
 #Finance,Hyderabad,2.0,Positive
 #FloodRe,Mumbai,2.0,Positive
-#General,Chennai,-2.0,negative
-#GoGreen,Delhi,0.0,neutral
+#Funeral,Mumbai,-1.0,negative
 #Gurgaon,Gurgaon,2.0,Positive
-#ILampFS,Hyderabad,-1.0,negative
+#Hackers,Kolkata,2.0,Positive
 #ITIHK19,Kolkata,2.0,Positive
 #IVD2019,Mumbai,-1.0,negative
-#JanDhan,Chennai,2.0,Positive
-#JanDhan,Navi Mumbai,2.0,Positive
+#Jamaica,Pune,2.0,Positive
 #KeepGoi,Surat,-2.5,negative
 #LOVEofZ,Hyderabad,3.0,Strong Positive
 #Lucknow,Lucknow,1.0,Positive
 #Moirang,Visakhapatnam,-2.0,negative
 #Outdoor,Delhi,2.0,Positive
-#Rambagh,Delhi,2.0,Positive
+#Quality,Hyderabad,2.0,Positive
 #ReWRITE,Mumbai,4.0,Strong Positive
-#Sariler,Hyderabad,3.0,Strong Positive
-#aadhaar,Pune,1.0,Positive
 #bgb2019,Mumbai,2.0,Positive
 #clarity,Mumbai,1.0,Positive
-#dancers,Hyderabad,1.0,Positive
 #digital,Mumbai,1.0,Positive
-#driving,Mumbai,-1.0,negative
-#fashion,Pune,2.0,Positive
 #finance,Mumbai,2.0,Positive
+#fintech,Mumbai,1.0,Positive
 #general,Chennai,-1.0,negative
-#getaway,Navi Mumbai,2.0,Positive
-#housing,Pune,-0.5,negative
-#housing,Delhi,-1.0,negative
-#housing,Mumbai,-2.0,negative
+#getaway,Navi Mumbai,1.5,Positive
+#housing,Delhi,1.0,Positive
+#infosec,Kolkata,2.0,Positive
 #khattar,Gurgaon,-1.0,negative
+#luxuryh,Mumbai,2.5,Positive
 #medical,Mumbai,-3.0,Strong negative
-#nifty50,Mumbai,1.0,Positive
-#realtor,Noida,0.0,neutral
+#mergers,Mumbai,1.0,Positive
 #respect,Delhi,3.0,Strong Positive
 #sensors,Mumbai,2.0,Positive
+#stylish,Hyderabad,3.0,Strong Positive
 #traffic,Mumbai,-1.0,negative
-#Adjuster,Delhi,3.5,Strong Positive
-#AsimRiaz,Delhi,-1.6666666666666667,negative
-#AsimRiaz,Mumbai,0.08333333333333333,Positive
-#AsimRiaz,Kolkata,-2.0,negative
-#BREAKING,Mumbai,-1.0,negative
-#BREAKING,Lucknow,-1.0,negative
+#AsimRiaz,Delhi,2.0,Positive
+#AsimRiaz,Mumbai,0.625,Positive
+#AsimRiaz,Kolkata,-0.75,negative
 #BiggBoss,Mumbai,-1.0,negative
-#BiggBoss,Gurgaon,4.0,Strong Positive
 #BiggBoss,Kolkata,0.0,neutral
 #BiggBoss,Hyderabad,-1.0,negative
-#Breaking,Pune,-2.0,negative
-#Breaking,Delhi,-2.0,negative
-#Breaking,Mumbai,-2.0,negative
-#Breaking,Chennai,-2.0,negative
-#Breaking,Kolkata,-2.0,negative
-#Breaking,Lucknow,-2.0,negative
-#Breaking,Ahmedabad,-2.0,negative
-#Breaking,Hyderabad,-2.0,negative
+#Business,Mumbai,1.0,Positive
 #COCOCure,Mumbai,2.3333333333333335,Positive
+#Coliving,Ahmedabad,2.5,Positive
 #ElanEpic,Gurgaon,2.0,Positive
+#Expenses,Mumbai,-1.0,negative
+#FlixFirs,Delhi,3.0,Strong Positive
+#FlixFirs,Mumbai,3.0,Strong Positive
+#FlixFirs,Ahmedabad,3.0,Strong Positive
+#FlixFirs,Bengaluru,3.0,Strong Positive
+#FlixFirs,Hyderabad,3.0,Strong Positive
 #Gaursons,Noida,2.0,Positive
-#Insurers,Mumbai,1.0,Positive
-#Kashmiri,Delhi,-2.0,negative
+#Himanshi,Noida,0.0,neutral
+#Himanshi,Mumbai,0.0,neutral
+#Himanshi,Kolkata,0.0,neutral
+#Holidays,Hyderabad,2.0,Positive
+#KRAMotor,Pune,2.0,Positive
 #ModiYogi,Delhi,-1.5,negative
-#Morrison,Hyderabad,-2.0,negative
+#SLOWDOWN,Hyderabad,-0.3333333333333333,negative
+#Southend,Mumbai,2.0,Positive
+#Startups,Mumbai,2.0,Positive
 #agencies,Chennai,2.0,Positive
 #airlines,Mumbai,1.5,Positive
 #bigstory,Chennai,1.0,Positive
 #carriers,Chennai,2.0,Positive
 #contract,Mumbai,1.0,Positive
-#director,Mumbai,-1.0,negative
-#dribbble,Chennai,1.0,Positive
 #erysonhr,Chennai,-1.0,negative
-#hesitate,Hyderabad,3.0,Strong Positive
-#lighting,Hyderabad,3.0,Strong Positive
+#fakenaaz,Chennai,-1.0,negative
+#insurers,Hyderabad,-2.0,negative
 #mortgage,Mumbai,-3.0,Strong negative
-#security,Chennai,1.0,Positive
-#startups,Chennai,1.0,Positive
-#uidesign,Chennai,1.0,Positive
-#AdarshCHS,Pune,1.0,Positive
+#property,Mumbai,1.0,Positive
 #Ahmedabad,Mumbai,-1.0,negative
 #Americans,Mumbai,-3.0,Strong negative
-#ArtiSingh,Mumbai,-2.0,negative
-#AsimRiazs,Delhi,-3.0,Strong negative
-#Community,Hyderabad,2.3333333333333335,Positive
+#Community,Hyderabad,2.0,Positive
 #Criminals,Mumbai,-0.5,negative
 #Customers,Mumbai,1.0,Positive
+#Financial,Delhi,1.5,Positive
 #Foodcourt,Gurgaon,2.0,Positive
-#Hackathon,Mumbai,4.0,Strong Positive
-#Hyderabad,Mumbai,0.5,Positive
-#Hyderabad,Visakhapatnam,0.5,Positive
-#INsurTech,Mumbai,1.0,Positive
-#InsurTech,Mumbai,4.0,Strong Positive
-#Insurance,Delhi,2.6666666666666665,Positive
-#Insurance,Mumbai,1.3333333333333333,Positive
+#Guidewire,Mumbai,1.0,Positive
+#INSURANCE,Hyderabad,-0.3333333333333333,negative
+#Insurance,Delhi,1.75,Positive
+#Insurance,Mumbai,0.9333333333333333,Positive
 #Insurance,Kolkata,1.0,Positive
+#Insurance,Hyderabad,-2.0,negative
+#Insurtech,Mumbai,2.25,Positive
 #Insurtech,Kolkata,1.75,Positive
 #Interview,Kolkata,2.0,Positive
-#Investors,Mumbai,1.0,Positive
-#Karnataka,Bengaluru,1.0,Positive
-#Kashmiris,Delhi,0.5,Positive
-#Liquidity,Hyderabad,-1.0,negative
+#Lifestyle,Hyderabad,2.0,Positive
+#MadinaMnR,Hyderabad,3.0,Strong Positive
 #Marketing,Mumbai,4.0,Strong Positive
+#ModiFalls,Chennai,-1.0,negative
 #NotinTown,Kolkata,2.0,Positive
-#PollSeBol,Mumbai,0.0,neutral
+#RECESSION,Hyderabad,-0.3333333333333333,negative
 #Rajasthan,Mumbai,2.0,Positive
+#Residents,Surat,-1.0,negative
 #TheHuddle,Hyderabad,2.0,Positive
-#Wealthmax,Delhi,2.5,Positive
+#Timepiece,Hyderabad,2.0,Positive
+#Wealthmax,Delhi,1.5,Positive
 #apartment,Pune,2.0,Positive
-#eventpros,Hyderabad,1.0,Positive
-#financial,Mumbai,3.0,Strong Positive
-#financial,Chennai,2.0,Positive
-#financial,Navi Mumbai,2.0,Positive
-#homedecor,Delhi,4.0,Strong Positive
+#financial,Mumbai,2.5,Positive
 #insurance,Pune,1.0,Positive
-#insurance,Delhi,1.8,Positive
-#insurance,Mumbai,0.21875,Positive
-#insurance,Chennai,1.0,Positive
-#insurance,Hyderabad,2.0,Positive
+#insurance,Delhi,3.0,Strong Positive
+#insurance,Mumbai,0.02857142857142857,Positive
+#insurance,Chennai,-0.2222222222222222,negative
+#insurance,Gurgaon,-0.5,negative
+#insurance,Ahmedabad,1.5,Positive
 #insurtech,Delhi,3.5,Strong Positive
+#investing,Mumbai,0.0,neutral
 #jewellery,Noida,-1.0,negative
 #openplots,Hyderabad,-1.0,negative
 #portfolio,Chennai,1.0,Positive
 #realtynxt,Mumbai,2.0,Positive
-#showgirls,Hyderabad,1.0,Positive
-#vacations,Navi Mumbai,2.0,Positive
-#BiggBoss13,Delhi,-0.5,negative
-#BiggBoss13,Mumbai,0.6666666666666666,Positive
+#solutions,Mumbai,1.0,Positive
+#vacations,Navi Mumbai,1.5,Positive
+#BharatBenz,Chennai,0.0,neutral
+#BiggBoss13,Noida,0.0,neutral
+#BiggBoss13,Mumbai,-0.25,negative
+#BiggBoss13,Kolkata,0.0,neutral
+#Databreach,Kolkata,2.0,Positive
 #HabitatYLB,Mumbai,-1.0,negative
-#IBULHSGFIN,Mumbai,1.0,Positive
-#Indiabulls,Mumbai,1.0,Positive
-#Indiabulls,Chennai,1.0,Positive
-#Indiabulls,Hyderabad,-2.0,negative
+#Healthcare,Chennai,2.0,Positive
 #Innovation,Mumbai,2.0,Positive
+#Medication,Delhi,1.0,Positive
 #Mozambique,Gurgaon,2.5,Positive
 #NewsUpdate,Mumbai,0.3333333333333333,Positive
-#PIIManager,Pune,1.0,Positive
 #Properties,Gurgaon,2.0,Positive
 #SanAntonio,Mumbai,2.5,Positive
+#Savarkarji,Mumbai,2.0,Positive
 #SidharthSh,Delhi,-2.0,negative
-#TataGlobal,Hyderabad,-2.0,negative
+#WestBengal,Chennai,-1.0,negative
+#affordable,Hyderabad,2.0,Positive
 #bigbosss13,Delhi,2.3333333333333335,Positive
-#compliance,Pune,1.0,Positive
 #doubletree,Mumbai,2.1666666666666665,Positive
-#eventprofs,Hyderabad,1.0,Positive
-#filmmaking,Mumbai,0.0,neutral
-#government,Pune,-0.5,negative
+#facilities,Hyderabad,3.0,Strong Positive
+#filmmaking,Mumbai,1.0,Positive
 #healthcare,Ahmedabad,3.0,Strong Positive
 #homebuyers,Pune,1.5,Positive
-#homebuyers,Delhi,-1.0,negative
-#laundryapp,Chennai,1.0,Positive
 #leadership,Mumbai,2.0,Positive
 #lovelondon,Delhi,3.5,Strong Positive
 #membership,Navi Mumbai,1.5,Positive
-#motivation,Delhi,3.0,Strong Positive
-#realestate,Pune,1.0,Positive
+#realastate,Hyderabad,3.0,Strong Positive
+#realestate,Pune,1.75,Positive
 #simplicity,Mumbai,1.0,Positive
-#telematics,Mumbai,2.0,Positive
-#7yearsofAAP,Delhi,-2.0,negative
-#BlackFriday,Mumbai,3.0,Strong Positive
-#DailyPicked,Hyderabad,2.0,Positive
+#starhealth,Chennai,-2.3333333333333335,negative
+#CABPolitics,Chennai,-1.0,negative
 #Documentary,Mumbai,1.0,Positive
 #ElliottWave,Mumbai,-3.0,Strong negative
-#Investments,Delhi,2.5,Positive
-#Millennials,Mumbai,1.0,Positive
+#ExpertViews,Delhi,2.0,Positive
+#Investments,Delhi,1.5,Positive
+#KampRAGroup,Pune,1.6666666666666667,Positive
 #NewYorkCity,Mumbai,-0.5,negative
 #OnionPrices,Chennai,-2.0,negative
 #PINCInsured,Mumbai,-2.0,negative
-#RashmiDesai,Delhi,-0.4,negative
+#PropagandaG,Hyderabad,2.0,Positive
+#RashmiDesai,Delhi,-0.7272727272727273,negative
 #RashmiDesai,Patna,-1.0,negative
 #RashmiDesai,Surat,-1.0,negative
 #RashmiDesai,Jaipur,-1.0,negative
@@ -311,182 +263,140 @@
 #Reatilshops,Gurgaon,2.0,Positive
 #ShehnazGill,Mumbai,-2.0,negative
 #ShehnazGill,Lucknow,-2.0,negative
-#TheOutrider,Mumbai,2.0,Positive
 #emergencies,Mumbai,-3.0,Strong negative
 #luxeinferno,Kolkata,2.0,Positive
+#luxuryhomes,Mumbai,2.5,Positive
 #mahulbrahma,Kolkata,2.0,Positive
+#mutualfunds,Mumbai,-1.0,negative
 #officespace,Pune,1.0,Positive
 #reinsurance,Mumbai,1.0,Positive
+#switzerland,Mumbai,3.0,Strong Positive
 #thesmartway,Mumbai,1.5,Positive
-#websecurity,Chennai,1.0,Positive
-#Cyberattacks,Mumbai,0.0,neutral
+#BusinessMgmt,Mumbai,2.0,Positive
 #FlushMeDesai,Patna,2.0,Positive
 #FuneralCover,Mumbai,2.0,Positive
-#ICICILombard,Delhi,2.0,Positive
-#ICICILombard,Patna,2.0,Positive
-#ICICILombard,Jaipur,2.0,Positive
-#ICICILombard,Kanpur,2.0,Positive
-#ICICILombard,Mumbai,1.1111111111111112,Positive
-#ICICILombard,Kolkata,2.0,Positive
-#ICICILombard,Lucknow,2.0,Positive
 #LuxuryBudget,Kolkata,0.0,neutral
 #LuxuryRetail,Gurgaon,2.0,Positive
-#LuxuryTravel,Kolkata,2.0,Positive
-#MahiraSharma,Delhi,1.0,Positive
-#MahiraSharma,Mumbai,-1.0,negative
-#MahiraSharma,Hyderabad,2.0,Positive
-#NibhayeVaade,Delhi,2.0,Positive
-#NibhayeVaade,Patna,2.0,Positive
-#NibhayeVaade,Jaipur,2.0,Positive
-#NibhayeVaade,Kanpur,2.0,Positive
-#NibhayeVaade,Mumbai,2.0,Positive
-#NibhayeVaade,Kolkata,2.0,Positive
-#NibhayeVaade,Lucknow,2.0,Positive
-#ParasChhabra,Delhi,1.2857142857142858,Positive
 #ParasChhabra,Kolkata,-2.0,negative
 #PlatinumLife,Mumbai,1.5,Positive
 #PolicyReport,Pune,2.0,Positive
 #RashamiDesai,Delhi,-0.2857142857142857,negative
 #RashamiDesai,Jaipur,-2.6666666666666665,negative
-#RashamiDesai,Mumbai,-2.5,negative
-#RashamiDesai,Lucknow,-1.0,negative
+#RashamiDesai,Mumbai,-2.6666666666666665,negative
 #RashamiDesai,Ahmedabad,-2.6666666666666665,negative
 #RashamiDesai,Hyderabad,-2.6666666666666665,negative
 #Rashamidesai,Delhi,0.0,neutral
 #Registration,Delhi,2.0,Positive
-#ShehnaazGill,Mumbai,-2.0,negative
-#fixeddeposit,Pune,1.0,Positive
 #forestcounty,Pune,2.0,Positive
-#gleefulreads,Mumbai,3.0,Strong Positive
-#lossrecovery,Mumbai,-0.5,negative
-#mentalhealth,Delhi,1.0,Positive
+#luxurytravel,Pune,2.0,Positive
 #paramountTPA,Jaipur,2.0,Positive
+#termlifeplan,Delhi,2.0,Positive
 #AIDSawareness,Mumbai,2.0,Positive
+#AnushkaSharma,Mumbai,1.0,Positive
+#Bestworkplace,Mumbai,3.0,Strong Positive
 #Cybersecurity,Kolkata,2.0,Positive
 #DataAnalytics,Mumbai,1.0,Positive
 #FamilyFloater,Delhi,-1.0,negative
-#GivingTuesday,Chennai,0.3333333333333333,Positive
-#GivingTuesday,Lucknow,0.3333333333333333,Positive
 #HomeInsurance,Chennai,1.0,Positive
+#InterestRates,Mumbai,-1.75,negative
+#JaleshCruises,Hyderabad,1.0,Positive
+#LIFEINSURANCE,Hyderabad,-0.3333333333333333,negative
 #LifeGoalsDone,Pune,1.0,Positive
 #LifeGoalsDone,Hyderabad,1.0,Positive
 #LifeInsurance,Pune,1.4,Positive
-#LifeInsurance,Hyderabad,1.4,Positive
-#M3MGolfEstate,Gurgaon,2.0,Positive
-#MarketsWithMC,Mumbai,1.0,Positive
-#MarketsWithMC,Chennai,1.0,Positive
-#PMCBankCrisis,Mumbai,1.5,Positive
+#LifeInsurance,Hyderabad,1.25,Positive
+#PINCInsurance,Mumbai,3.0,Strong Positive
 #PriyankaVadra,Mumbai,-0.5,negative
-#SidhartShukla,Delhi,2.0,Positive
-#SidhartShukla,Mumbai,-1.0,negative
+#SidhartShukla,Delhi,1.0,Positive
 #StayStrongSid,Delhi,0.5,Positive
 #advertisement,Mumbai,1.0,Positive
 #autoinsurance,Mumbai,2.0,Positive
 #cybersecurity,Chennai,1.0,Positive
-#entertainment,Hyderabad,2.0,Positive
+#entertainment,Hyderabad,3.0,Strong Positive
 #insurancenews,Mumbai,2.0,Positive
 #organdonation,Mumbai,1.0,Positive
 #policyholders,Pune,1.0,Positive
 #policyholders,Mumbai,1.0,Positive
-#tanmoysaadhak,Kolkata,2.0,Positive
 #BajajAllianzLi,Pune,1.0,Positive
 #BajajAllianzLi,Hyderabad,1.0,Positive
-#CNBCTV18Market,Mumbai,-0.6666666666666666,negative
-#HimashiKhurana,Delhi,0.5,Positive
-#HousingFinance,Hyderabad,-1.0,negative
-#MBUMomsWhoBlog,Mumbai,3.0,Strong Positive
+#MBUMomsWhoBlog,Mumbai,-1.0,negative
 #MedicareForAll,Kolkata,-1.0,negative
-#MotorInsurance,Delhi,2.0,Positive
-#MotorInsurance,Patna,2.0,Positive
-#MotorInsurance,Jaipur,2.0,Positive
-#MotorInsurance,Kanpur,2.0,Positive
-#MotorInsurance,Mumbai,2.0,Positive
-#MotorInsurance,Kolkata,2.0,Positive
-#MotorInsurance,Lucknow,2.0,Positive
 #RGLuxuryBuyers,Noida,0.6666666666666666,Positive
-#RealEstateNews,Delhi,-1.0,negative
+#RealEstateNews,Delhi,2.0,Positive
 #SiddarthShukla,Ahmedabad,3.0,Strong Positive
-#SiddhartShukla,Mumbai,-2.3,negative
-#SidharthShukla,Delhi,-1.0,negative
-#SidharthShukla,Surat,-2.0,negative
-#SidharthShukla,Mumbai,-0.125,negative
+#SiddhartShukla,Mumbai,-2.3333333333333335,negative
+#SidharthShukla,Delhi,-1.2333333333333334,negative
+#SidharthShukla,Mumbai,-1.3333333333333333,negative
 #SidharthShukla,Kolkata,-2.3333333333333335,negative
-#SidharthShukla,Lucknow,-1.5,negative
-#SidharthShukla,Hyderabad,-0.6666666666666666,negative
-#VishalAdityaSi,Mumbai,-1.0,negative
-#VishalAdityaSi,Lucknow,-1.0,negative
-#riskmanagement,Mumbai,-1.0,negative
+#SidharthShukla,Lucknow,-2.0,negative
+#SidharthShukla,Hyderabad,-3.0,Strong negative
+#apartmentdecor,Delhi,3.0,Strong Positive
+#riskmanagement,Mumbai,-2.0,negative
+#sidharthshukla,Mumbai,2.6666666666666665,Positive
 #theluxetrilogy,Kolkata,2.0,Positive
-#userexperience,Chennai,1.0,Positive
+#AjnaraFragrance,Noida,2.5,Positive
+#CancerInsurance,Mumbai,1.0,Positive
+#CapaciousSpaces,Surat,-1.0,negative
+#FlixFarFromHome,Hyderabad,1.0,Positive
 #GlsArawaliHomes,Gurgaon,-1.0,negative
-#Healthinsurance,Delhi,2.5,Positive
-#HindustaniBhaus,Mumbai,-2.0,negative
+#GoyalAndCompany,Mumbai,3.5,Strong Positive
+#HealthInsurance,Chennai,1.0,Positive
 #IAmWithSidShukl,Delhi,-1.3333333333333333,negative
-#MahaVikasAghadi,Delhi,1.5,Positive
-#ShefaliJariwala,Delhi,0.5,Positive
-#ShefaliZariwala,Delhi,0.5,Positive
-#SiddharthShukla,Delhi,-3.0,Strong negative
+#InsurancePolicy,Mumbai,-1.75,negative
+#MahaVikasAghadi,Delhi,-0.5,negative
+#PanchshilRealty,Mumbai,3.5,Strong Positive
+#PersonalFinance,Pune,-1.5,negative
 #SiddharthShukla,Jaipur,-2.0,negative
-#SiddharthShukla,Mumbai,-1.375,negative
-#SidharthShuklas,Delhi,-0.5,negative
+#SiddharthShukla,Mumbai,-0.6,negative
 #SidharthaShukla,Kolkata,-2.0,negative
+#WednesdayWisdom,Varanasi,-2.0,negative
 #WorldStreetMall,Noida,2.0,Positive
 #amitabhchaudhry,Chennai,1.0,Positive
 #cloverhighlands,Pune,1.0,Positive
 #commercegermany,Mumbai,1.0,Positive
-#conciousfashion,Mumbai,3.0,Strong Positive
-#handmadeinindia,Mumbai,3.0,Strong Positive
-#healthinsurance,Mumbai,2.0,Positive
-#personalfinance,Chennai,3.0,Strong Positive
 #IAmWithSidShukla,Pune,-3.0,Strong negative
 #IAmWithSidShukla,Delhi,-4.0,Strong negative
 #IAmWithSidShukla,Ahmedabad,-3.0,Strong negative
 #IAmwithsidshukla,Mumbai,2.0,Positive
-#SelfStyledFakeer,Gurgaon,-1.5,negative
-#VijayDeverakonda,Mumbai,2.0,Positive
+#RealEstateMumbai,Mumbai,-2.6666666666666665,negative
+#ThisHappened2019,Delhi,-1.5,negative
+#luxuryapartments,Pune,2.5,Positive
 #ETInsuranceSummit,Pune,2.0,Positive
-#ETInsuranceSummit,Mumbai,1.0,Positive
-#ETInsuranceSummit,Hyderabad,2.0,Positive
+#InsurgentBheemNTR,Chennai,-1.0,negative
 #PMCBankDepositors,Mumbai,-3.0,Strong negative
 #Realestatecompany,Hyderabad,-1.0,negative
-#TransformingIndia,Delhi,-2.0,negative
-#TransformingIndia,Jaipur,-2.0,negative
-#UnderConstruction,Delhi,-1.0,negative
-#VishalAdityaSingh,Delhi,0.375,Positive
-#VishalAdityaSingh,Mumbai,0.5,Positive
+#ShipRecyclingBill,Delhi,0.25,Positive
+#ShipRecyclingBill,Mumbai,0.25,Positive
+#VishalAdityaSingh,Delhi,0.8571428571428571,Positive
+#VishalAdityaSingh,Mumbai,4.0,Strong Positive
+#financialplanning,Mumbai,1.0,Positive
 #insurtechinsights,Kolkata,2.0,Positive
-#luxurydrycleaning,Chennai,1.0,Positive
 #manoharlalkhattar,Gurgaon,-1.0,negative
 #solidaritybahrain,Mumbai,3.0,Strong Positive
 #AmrapaliHomebuyers,Noida,0.6666666666666666,Positive
+#ChristmasGrandPlan,Delhi,3.0,Strong Positive
 #ElectropreneurPark,Pune,1.0,Positive
 #ElectropreneurPark,Noida,1.0,Positive
 #ElectropreneurPark,Surat,1.0,Positive
 #ElectropreneurPark,Bengaluru,1.0,Positive
-#HandsOffEverything,Delhi,-1.0,negative
+#JamiaMilliaIslamia,Mumbai,-1.0,negative
 #StayStrongSidharth,Mumbai,2.0,Positive
 #doubletreebyhilton,Mumbai,3.0,Strong Positive
-#sustainablefashion,Mumbai,3.0,Strong Positive
-#6MonthsOfIndiaFirst,Delhi,-2.0,negative
-#6MonthsOfIndiaFirst,Jaipur,-2.0,negative
-#6MonthsOfIndiaFirst,Mumbai,-2.0,negative
-#6MonthsOfIndiaFirst,Ahmedabad,-2.0,negative
-#6MonthsOfIndiaFirst,Hyderabad,-2.0,negative
-#CaptainCoolShuklaJi,Delhi,0.6666666666666666,Positive
-#DriveSafeNaviMumbai,Navi Mumbai,2.0,Positive
 #EvictHatemongerAsim,Ahmedabad,-2.0,negative
+#HDFCCapitalAdvisors,Mumbai,3.0,Strong Positive
+#MarinaBayRealEstate,Pune,3.0,Strong Positive
 #TimesLitFestKolkata,Kolkata,2.0,Positive
 #erysonhrservicesllp,Chennai,-1.0,negative
+#renthousesinmiyapur,Hyderabad,3.0,Strong Positive
 #InterContinentalLife,Mumbai,2.0,Positive
-#newsinsurancejournal,Mumbai,-2.0,negative
+#newsinsurancejournal,Mumbai,-2.3333333333333335,negative
 #DiversityandInclusion,Mumbai,2.0,Positive
 #LifeGoalAdvisorAwards,Pune,-2.0,negative
-#blackrosentertainment,Hyderabad,1.0,Positive
-#ArtificialIntelligence,Chennai,1.0,Positive
-#DevoleenaBhattacharjee,Delhi,-3.0,Strong negative
+#TechAndAutoAwards2019,Delhi,3.0,Strong Positive
+#interlakenswitzerland,Mumbai,3.0,Strong Positive
 #DevoleenaBhattacharjee,Patna,2.0,Positive
-#EnforcementDirectorate,Pune,1.0,Positive
-#artificialintelligence,Pune,1.0,Positive
+#CitizenshipAmendmentAct,Chennai,-1.0,negative
 #KeepGoingSidharthShukla,Kolkata,2.0,Positive
 #WeSupportSidharthShukla,Chennai,2.5,Positive
 #IndianNationalArmyMemorial,Visakhapatnam,-2.0,negative
+#UniversalHealthCoverageDay,Pune,-1.0,negative

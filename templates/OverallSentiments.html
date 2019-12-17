@@ -23,6 +23,7 @@
         <a href="/HashtagSentiment">Hashtag Sentiment</a>
         <a href="/TopTweetingCities">Top Tweeting Cities</a>
         <a class="active" href="/OverallSentiments">Overall Sentiments</a>
+            <a href="/TopHashtags">Top Hashtags</a>
             <a href="/MostSpokenWord">Most Spoken Word</a>
             <a href="/CitywiseHashtagsSentiments">Citywise Hashtags Sentiments</a>
             <a href="/CitywiseTopTweets">Citywise Top Tweets</a>
@@ -37,7 +38,7 @@
     <h1 id="movtxt_1">Overall Sentiments INDIA</h1>
 
 <!--PIE CHART CANVAS -->
-<div class="chart-container" style=" width: 80vw; overflow:hidden;">
+<div class="chart-container" style=" width: 50vw; height: 50vw; overflow:hidden;">
 <canvas id="myChart" width="200" height="200"></canvas>
 <p>City Overall Sentiments</p>
     </div>
@@ -60,7 +61,7 @@ var pieData = {
                       {{item}},
                     {% endfor %}],
             backgroundColor: [
-                "#A9DB54",  /* Green, Dark Green, Dark Red, Red, blue*/
+                "#A9DB54",  /*Green, Dark Green, Dark Red, Red, blue*/
                 "#66DC54",
                 "#DD5464",
                 "#DB8556",

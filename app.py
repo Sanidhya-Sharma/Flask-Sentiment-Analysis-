@@ -88,7 +88,7 @@ def CitySentiments():
 
     #FORLOOP APPENDING ROWS
     for rows in data_gpd.get_values():
-        datalist.append(float(rows[1]))
+        datalist.append(float(rows[1]))                          #COMBINED TWO FOR LOOPS
         datalist_1.append(str(rows[0]).replace(" ", ""))
 
     #ASSIGINING PARAMETERS TO RETURN CALLS
@@ -186,6 +186,48 @@ def OverallSentiments():
     return render_template('OverallSentiments.html', values=Sentiment, labels=Cities, legend=legend)
 
 
+@app.route("/TopHashtags")
+def TopHashtags():
+
+    print('Top Hashtags Page')
+
+    #CALLING CSV FILE IN A DATAFRAME
+    dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
+
+    #MAKING COLOUMNS FOR A IMPORTED CSV FILE
+    dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
+
+    #EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    data = dataframe[['Hashtags','Cities']]
+
+    #GROUPING BY CITIES
+    data_gd = data.groupby(['Hashtags']).count().reset_index()
+    print('Top Hashtags Datafame Generated')
+
+    #PARAMETERS
+    datalist = []
+    datalist_1 = []
+
+    #ITTERTATING ROWS CITY COUNT
+    for rows in data_gd.get_values():
+        datalist.append(int(rows[1]))
+
+    #ITTERATING ROWS FOR CITY NAMES
+    for rows in data_gd.get_values():
+        datalist_1.append(str(rows[0]).replace(" ", "_"))
+
+    #PASSING PARAMENTERS
+    legend = 'Tweet Count'
+    CityCount = datalist
+    Hashtags = datalist_1
+
+    print('Top Hashtags Datafame Passed ')
+
+    #RETURNING THE CHART.JS VALUES
+    return render_template('TopHashtags.html', values=CityCount, labels=Hashtags, legend=legend)
+
+
+
 @app.route("/MostSpokenWord")
 def MostSpokenWord():
 
@@ -259,7 +301,7 @@ def CitywiseHashtagsSentiments():
     #GROUPING BY CITIES
     data_gd = data.groupby(['Hashtags']).sum().reset_index()
 
-    #print(data_gd)
+    print(data_gd)
 
     print('Citywise Hashtags Sentiments Datafame Generated')
 
@@ -274,7 +316,7 @@ def CitywiseHashtagsSentiments():
 
     #ITTERATING ROWS FOR CITY NAMES
     for rows in data_gd.get_values():
-        datalist_1.append(str(rows[0]).replace(" ", ""))
+        datalist_1.append(str(rows[0]).replace(" ", " "))
 
     #ITTERATING ROWS FOR CITY NAMES FOR DROPDOWN
     for rows in data_Dropdown_1.get_values():
@@ -328,7 +370,7 @@ def CitywiseTopTweets():
 
     data_gd2 = data_gd.groupby(['Hashtags']).sum().reset_index()
 
-    #print(data_gd)
+    print(data_gd2)
 
     print('Citywise Top Tweets Datafame Generated')
 
@@ -345,7 +387,7 @@ def CitywiseTopTweets():
 
     #ITTERATING ROWS FOR CITY NAMES
     for rows in data_gd2.get_values():
-        datalist_1.append(str(rows[0]).replace(" ", ""))
+        datalist_1.append(str(rows[0]).replace(" ", " "))
 
     #ITTERATING ROWS FOR CITY NAMES FOR DROPDOWN
     for rows in data_Dropdown_1.get_values():

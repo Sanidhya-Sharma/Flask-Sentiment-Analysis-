@@ -22,6 +22,7 @@
         <a href="/HashtagSentiment">Hashtag Sentiment</a>
         <a href="/TopTweetingCities">Top Tweeting Cities</a>
         <a href="/OverallSentiments">Overall Sentiments</a>
+            <a href="/TopHashtags">Top Hashtags</a>
             <a href="/MostSpokenWord">Most Spoken Word</a>
             <a class="active" href="/CitywiseHashtagsSentiments">Citywise Hashtags Sentiments</a>
             <a href="/CitywiseTopTweets">Citywise Top Tweets</a>
@@ -53,7 +54,7 @@
 </form>
 
 <!--  HEADER TEXT-->
-    <h1 id="movtxt_1">Top City Hashtags {{selected_value}}</h1>
+    <h1 id="movtxt_1">Citywise Hashtags {{selected_value}}</h1>
 
 <!--    CHART CANVAS WITH DIVISION-->
     <div class="chart-container" style="float: left; width: 100%; overflow:hidden;">
@@ -106,7 +107,6 @@
       var myChart = new Chart(ctx, {
         type: 'bar',
         data: chartData,
-
       });
     </script>
 
