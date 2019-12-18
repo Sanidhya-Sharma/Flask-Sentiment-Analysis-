@@ -3,6 +3,7 @@ from flask import Flask
 from flask import render_template
 import pandas as pd
 from flask import request
+import os
 
 #ASSINGNING APP AS__NAME_ FOR CALLING TO MAIN
 app = Flask(__name__)
@@ -23,7 +24,9 @@ def HashtagSentiment():
     print('Hashtags Sentiments Page')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")    #BY DEFAULT IT DEOSEN'T NEED LOCATION BUT DUE TO ERRORS I HAD TO ASSIGN LOCATION
+    # dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")    #BY DEFAULT IT DEOSEN'T NEED LOCATION BUT DUE TO ERRORS I HAD TO ASSIGN LOCATION
+
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -51,14 +54,14 @@ def HashtagSentiment():
     print('Hashtags Sentiments Dataframe Generated')
 
     #ASSIGN VALUES TO GRAPH VARIABLES
-    labels = datalist
-    values = datalist_1
+    Cities = datalist
+    Sentiment = datalist_1
     legend = 'Tweets'
 
     print('Hashtags Sentiments Datafame Values Passed')
 
     #RETURNING THE CHART.JS VALUES
-    return render_template('HashtagSentiment.html', values=values, labels=labels, legend=legend)
+    return render_template('HashtagSentiment.html', values=Sentiment, labels=Cities, legend=legend)
 
 
 
@@ -69,7 +72,7 @@ def CitySentiments():
     print('City Sentiments Page')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -88,7 +91,7 @@ def CitySentiments():
 
     #FORLOOP APPENDING ROWS
     for rows in data_gpd.get_values():
-        datalist.append(float(rows[1]))                          #COMBINED TWO FOR LOOPS
+        datalist.append(float(rows[1]))                                 #COMBINED TWO FOR LOOPS
         datalist_1.append(str(rows[0]).replace(" ", ""))
 
     #ASSIGINING PARAMETERS TO RETURN CALLS
@@ -108,7 +111,7 @@ def TopTweetingCities():
     print('Top Tweeting Cities Page')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -118,6 +121,9 @@ def TopTweetingCities():
 
     #GROUPING BY CITIES
     data_gd = data.groupby(['Cities']).count().reset_index()
+    print(data_gd)
+    #extracting greatest 500
+    data_order = data_gd.nlargest(500, "Hashtags")
 
     print('Top Tweeting Cities Datafame Generated')
 
@@ -126,11 +132,11 @@ def TopTweetingCities():
     datalist_1 = []
 
     #ITTERTATING ROWS CITY COUNT
-    for rows in data_gd.get_values():
+    for rows in data_order.get_values():
         datalist.append(int(rows[1]))
 
     #ITTERATING ROWS FOR CITY NAMES
-    for rows in data_gd.get_values():
+    for rows in data_order.get_values():
         datalist_1.append(str(rows[0]).replace(" ", ""))
 
     #PASSING PARAMENTERS
@@ -150,7 +156,7 @@ def OverallSentiments():
     print('Overall Sentiments Page')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -192,7 +198,7 @@ def TopHashtags():
     print('Top Hashtags Page')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -203,8 +209,8 @@ def TopHashtags():
     #GROUPING BY CITIES
     data_gd = data.groupby(['Hashtags']).count().reset_index()
 
-    #extracting greatest 30
-    large30 = data_gd.nlargest(500, "Cities")
+    #extracting greatest 500
+    large500 = data_gd.nlargest(500, "Cities")
 
     print('Top Hashtags Datafame Generated')
 
@@ -213,11 +219,11 @@ def TopHashtags():
     datalist_1 = []
 
     #ITTERTATING ROWS CITY COUNT
-    for rows in large30.get_values():
+    for rows in large500.get_values():
         datalist.append(int(rows[1]))
 
     #ITTERATING ROWS FOR CITY NAMES
-    for rows in large30.get_values():
+    for rows in large500.get_values():
         datalist_1.append(str(rows[0]).replace(" ", "_"))
 
     #PASSING PARAMENTERS
@@ -238,7 +244,7 @@ def MostSpokenWord():
     print('Most Spoken words')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\MostSpokenWord.csv")
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\MostSpokenWord.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Word', 'Count']
@@ -282,7 +288,7 @@ def CitywiseHashtagsSentiments():
     print(select)
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -349,7 +355,7 @@ def CitywiseTopTweets():
     print(select)
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']

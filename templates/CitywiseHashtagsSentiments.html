@@ -34,7 +34,7 @@
 
     <div class="content">
 
-<!---DROP DOWN AND BUTTON --->
+<!---DROP DOWN --->
 <form class="form-inline" method="POST" action="{{ url_for('CitywiseHashtagsSentiments') }}">
   <div class="form-group">
     <div class="input-group">
@@ -105,7 +105,7 @@
 
       // create the chart using the chart canvas
       var myChart = new Chart(ctx, {
-        type: 'bar',
+        type: 'line',
         data: chartData,
       });
     </script>
