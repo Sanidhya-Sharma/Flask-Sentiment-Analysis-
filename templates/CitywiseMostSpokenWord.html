@@ -2,25 +2,23 @@
 <html lang="en">
 
 <!--  HEADER WITH USER CSS -->
-  <head>
-      <!--  METADATA-->
-    <meta charset="utf-8" >
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--   TITLE-->
-    <title>Top Cities Tweeting</title>
-    <!--   CHART.JS CSS -->
+<head>
+    <!--  METADATA-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--    TITLE-->
+    <title>Citywise Most Spoken Word</title>
+    <!--    CHART.JS CSS -->
     <script src='static/js/Chart.min.js'></script>
-      <!--    USER DEFINED CSS -->
+    <!--    USER DEFINED CSS -->
     <link rel="stylesheet" href="/static/css/main.css">
+</head>
 
-  </head>
-
-
-<!--    HEADER & NAVIGATION BAR-->
+<!--    HEADER WITH NAVIGATION BAR-->
     <header>
         <div class="sidebar">
         <a href="/home">Home</a>
-        <a class="active"  href="/CitySentiments">City Sentiments</a>
+        <a href="/CitySentiments">City Sentiments</a>
         <a href="/HashtagSentiment">Hashtag Sentiment</a>
         <a href="/TopTweetingCities">Top Tweeting Cities</a>
         <a href="/OverallSentiments">Overall Sentiments</a>
@@ -28,30 +26,56 @@
             <a href="/MostSpokenWord">Most Spoken Word</a>
             <a href="/CitywiseHashtagsSentiments">Citywise Hashtags Sentiments</a>
             <a href="/CitywiseTopTweets">Citywise Top Tweets</a>
-            <a href="/CitywiseMostSpokenWord">Citywise Most Spoken Word</a>
+            <a class="active" href="/CitywiseMostSpokenWord">Citywise Most Spoken Word</a>
         </div>
     </header>
 
-<!--body-->
+<!--BODY-->
 <body>
 
-        <div class="content">
-<!--    HEADER TEXT-->
-            <h1 id="movtxt_1">City Sentiments India</h1>
+    <div class="content">
+
+<!---DROP DOWN AND BUTTON --->
+<form class="form-inline" method="POST" action="{{ url_for('CitywiseMostSpokenWord') }}">
+  <div class="form-group">
+    <div class="input-group">
+        <span class="input-group-addon"><a>Please select</a></span>
+
+<select name="comp_select" methods="GET" action="/" onchange='this.form.submit()'>
+  <option value="{{dropdown_val[0]}}" >{{dropdown_val[0]}}</option>
+    <option value="value" selected>{{selected_value}}</option>
+
+  {% for data in dropdown_val[1:] %}
+    <option value="{{data}}">{{data}}</option>
+  {% endfor %}
+
+</select>
+</div>
+  </div>
+</form>
+
+<!--  HEADER TEXT-->
+    <h1 id="movtxt_1">Most Spoken Word in {{selected_value}}</h1>
 
 <!--    CHART CANVAS WITH DIVISION-->
     <div class="chart-container" style="float: left; width: 100%; overflow:hidden;">
-    <canvas id="myChart" width="1600" height="600"></canvas>
-    <p>City Overall Sentiments India</p>
+    <canvas id="myChart" width="1400" height="600"></canvas>
+    <p> Most Spoken Word</p>
     </div>
-        </div>
-<!--    JAVA SCRIPT-->
+
+    </div>
+<!--  JAVA SCRIPTS -->
     <script>
       // Global parameters:
       // do not resize the chart canvas when its container does (keep at 600x400px)
       Chart.defaults.global.responsive = true;
-      Chart.defaults.global.maintainAspectRatio = true;
 
+<!--TO MAKE THE CHART START FROM 0-->
+      Chart.scaleService.updateScaleDefaults('linear', {
+    ticks: {
+        min: 0
+    }
+});
 
       // define the chart data
       var chartData = {
@@ -81,44 +105,19 @@
                       {{item}},
                     {% endfor %}],
             spanGaps: false
-        }]
+        }],
       }
 
       // get chart canvas
-      var holder = document.getElementById("myChart");
       var ctx = document.getElementById("myChart").getContext("2d");
 
       // create the chart using the chart canvas
       var myChart = new Chart(ctx, {
-        type: 'line',
+        type: 'bar',
         data: chartData,
-        options: {
-          tooltips: {
-            enabled: true,
-            mode: 'single',
-            callbacks: {
-              label: function(tooltipItems, data) {
-                       return tooltipItems.yLabel + ' Index';
-                     }
-            }
-          },
-        }
+
       });
-
-      // get the text element below the chart
-      var pointSelected = document.getElementById("pointSelected");
-
-      // create a callback function for updating the selected index on the chart
-      holder.onclick = function(evt){
-        var activePoint = myChart.getElementAtEvent(evt);
-        console.log(activePoint);
-        console.log('x:' + activePoint[0]._view.x);
-        console.log('maxWidth: ' + activePoint[0]._xScale.maxWidth);
-        console.log('y: ' + activePoint[0]._view.y);
-        console.log('index: ' + activePoint[0]._index);
-        pointSelected.innerHTML = 'Point selected... index: ' + activePoint[0]._index;
-      };
     </script>
 
-  </body>
+</body>
 </html>

@@ -121,7 +121,7 @@ def TopTweetingCities():
 
     #GROUPING BY CITIES
     data_gd = data.groupby(['Cities']).count().reset_index()
-    print(data_gd)
+
     #extracting greatest 500
     data_order = data_gd.nlargest(500, "Hashtags")
 
@@ -413,6 +413,81 @@ def CitywiseTopTweets():
 
     #RETURNING THE CHART.JS VALUES
     return render_template('CitywiseTopTweets.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
+
+#Trial alpha ------------------------------------------------------------------------------------------------------------------------
+
+@app.route("/CitywiseMostSpokenWord", methods=['GET', 'POST'])
+def CitywiseMostSpokenWord():
+
+    print('Citywise Most Spoken Word Page')
+
+    #GETTING VALUES FROM THE DROP DOWN USING REQUEST
+    select = request.form.get('comp_select')
+
+    print(select)
+
+    #CALLING CSV FILE IN A DATAFRAME
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\MostUsedWord.csv"))
+
+    #MAKING COLOUMNS FOR A IMPORTED CSV FILE
+    dataframe.columns = ['Cities', 'Words']
+
+#------------------------------------------------DROP DOWN DATA CALLS START------------------------------------------------------------------------------
+
+    #EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    data_Dropdown = dataframe[['Cities', 'Words']]
+
+    data_Dropdown_1 = data_Dropdown.groupby(['Cities']).count().reset_index()
+
+#------------------------------------------------DROP DOWN DATA CALLS END---------------------------------------------------------------------------------
+
+    #FILTER DATA BY WORD IN DATAFRAMES
+    FTR_data = dataframe[(dataframe.Cities == select)]
+
+    #EXTRACTING COLOUMNS DATA FROM DATAFRAME
+    data = FTR_data[['Cities','Words']]
+
+    #GROUPING BY CITIES
+    data_gd = data.groupby(['Words']).count().reset_index()
+
+    data_gd2 = data_gd.groupby(['Words']).sum().reset_index()
+
+    print(data_gd2)
+
+    print('Citywise Most Spoken Word Datafame Generated')
+
+    #PARAMETERS
+    datalist = []
+    datalist_1 = []
+    datalist_2 = []
+
+    #ITTERTATING ROWS CITY COUNT
+    for rows in data_gd2.get_values():
+        datalist.append(int(rows[1]))
+
+    print(datalist)
+
+    #ITTERATING ROWS FOR CITY NAMES
+    for rows in data_gd2.get_values():
+        datalist_1.append(str(rows[0]).replace(" ", " "))
+
+    #ITTERATING ROWS FOR CITY NAMES FOR DROPDOWN
+    for rows in data_Dropdown_1.get_values():
+        datalist_2.append(str(rows[0]).replace(" ", " "))
+
+    #PASSING PARAMENTERS
+    legend = 'Tweets'
+    Sentiment = datalist
+    Cities = datalist_1
+    dropdown_val = datalist_2
+
+    print('Citywise Most Spoken Word Datafame Values Passed')
+
+    #RETURNING THE CHART.JS VALUES
+    return render_template('CitywiseMostSpokenWord.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
+
+#Trial alpha ------------------------------------------------------------------------------------------------------------------------
+
 
 
 #MAIN CALL FUNCTION CALLING FLASK =_NAME_
