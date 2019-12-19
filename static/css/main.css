@@ -8,12 +8,26 @@ body {
   background-size: cover;
 }
 
+/*THE MAIN PAGE */
 .container {
   width: 1200px;
   margin: 0 auto;
 }
 
+/*THE VISUALIZATION IMAGE DIVISON*/
+.background-img{
+    position: fixed;
+    left: 646px;
+    top: 188px;
+    background-repeat: no-repeat;
+}
+.Visual_img{
+    width: 45vw;
+    height: 75vh;
+}
+
 /*---------------------------Navigation Bar------------------------------*/
+
 
 /* The side navigation menu */
 .sidebar {

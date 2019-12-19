@@ -393,7 +393,7 @@ def CitywiseTopHashtags():
     for rows in data_gd2.get_values():
         datalist.append(int(rows[1]))
 
-    print(datalist)
+    #print(datalist)
 
     #ITTERATING ROWS FOR CITY NAMES
     for rows in data_gd2.get_values():
@@ -414,7 +414,6 @@ def CitywiseTopHashtags():
     #RETURNING THE CHART.JS VALUES
     return render_template('CitywiseTopHashtags.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
 
-#Trial alpha ------------------------------------------------------------------------------------------------------------------------
 
 @app.route("/CitywiseMostSpokenWord", methods=['GET', 'POST'])
 def CitywiseMostSpokenWord():
@@ -488,9 +487,6 @@ def CitywiseMostSpokenWord():
 
     #RETURNING THE CHART.JS VALUES
     return render_template('CitywiseMostSpokenWord.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
-
-#Trial alpha ------------------------------------------------------------------------------------------------------------------------
-
 
 
 #MAIN CALL FUNCTION CALLING FLASK =_NAME_
