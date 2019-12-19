@@ -344,10 +344,10 @@ def CitywiseHashtagsSentiments():
     return render_template('CitywiseHashtagsSentiments.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
 
 
-@app.route("/CitywiseTopTweets", methods=['GET', 'POST'])
-def CitywiseTopTweets():
+@app.route("/CitywiseTopHashtags", methods=['GET', 'POST'])
+def CitywiseTopHashtags():
 
-    print('Citywise Top Tweets Page')
+    print('Citywise Top Hashtags Page')
 
     #GETTING VALUES FROM THE DROP DOWN USING REQUEST
     select = request.form.get('comp_select')
@@ -382,7 +382,7 @@ def CitywiseTopTweets():
 
     print(data_gd2)
 
-    print('Citywise Top Tweets Datafame Generated')
+    print('Citywise Top Hashtags Datafame Generated')
 
     #PARAMETERS
     datalist = []
@@ -409,10 +409,10 @@ def CitywiseTopTweets():
     Cities = datalist_1
     dropdown_val = datalist_2
 
-    print('Citywise Top Tweets Datafame Values Passed')
+    print('Citywise Top Hashtags Datafame Values Passed')
 
     #RETURNING THE CHART.JS VALUES
-    return render_template('CitywiseTopTweets.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
+    return render_template('CitywiseTopHashtags.html', values=Sentiment, labels=Cities, legend=legend, dropdown_val=dropdown_val, selected_value=select)
 
 #Trial alpha ------------------------------------------------------------------------------------------------------------------------
 
@@ -452,7 +452,10 @@ def CitywiseMostSpokenWord():
 
     data_gd2 = data_gd.groupby(['Words']).sum().reset_index()
 
-    print(data_gd2)
+    #extracting greatest 30
+    large30 = data_gd2.nlargest(30, "Cities")
+
+    print(large30)
 
     print('Citywise Most Spoken Word Datafame Generated')
 
@@ -462,13 +465,13 @@ def CitywiseMostSpokenWord():
     datalist_2 = []
 
     #ITTERTATING ROWS CITY COUNT
-    for rows in data_gd2.get_values():
+    for rows in large30.get_values():
         datalist.append(int(rows[1]))
 
     print(datalist)
 
     #ITTERATING ROWS FOR CITY NAMES
-    for rows in data_gd2.get_values():
+    for rows in large30.get_values():
         datalist_1.append(str(rows[0]).replace(" ", " "))
 
     #ITTERATING ROWS FOR CITY NAMES FOR DROPDOWN
@@ -476,7 +479,7 @@ def CitywiseMostSpokenWord():
         datalist_2.append(str(rows[0]).replace(" ", " "))
 
     #PASSING PARAMENTERS
-    legend = 'Tweets'
+    legend = 'Word Count'
     Sentiment = datalist
     Cities = datalist_1
     dropdown_val = datalist_2

@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--    TITLE-->
-    <title>Citywise Top Tweets</title>
+    <title>Citywise Top Hashtags</title>
     <!--    CHART.JS CSS -->
     <script src='static/js/Chart.min.js'></script>
     <!--    USER DEFINED CSS -->
@@ -25,7 +25,7 @@
             <a href="/TopHashtags">Top Hashtags</a>
             <a href="/MostSpokenWord">Most Spoken Word</a>
             <a href="/CitywiseHashtagsSentiments">Citywise Hashtags Sentiments</a>
-            <a class="active" href="/CitywiseTopTweets">Citywise Top Tweets</a>
+            <a class="active" href="/CitywiseTopHashtags">Citywise Top Hashtags</a>
             <a href="/CitywiseMostSpokenWord">Citywise Most Spoken Word</a>
         </div>
     </header>
@@ -36,7 +36,7 @@
     <div class="content">
 
 <!---DROP DOWN AND BUTTON --->
-<form class="form-inline" method="POST" action="{{ url_for('CitywiseTopTweets') }}">
+<form class="form-inline" method="POST" action="{{ url_for('CitywiseTopHashtags') }}">
   <div class="form-group">
     <div class="input-group">
         <span class="input-group-addon"><a>Please select</a></span>
@@ -60,7 +60,7 @@
 <!--    CHART CANVAS WITH DIVISION-->
     <div class="chart-container" style="float: left; width: 100%; overflow:hidden;">
     <canvas id="myChart" width="1400" height="600"></canvas>
-    <p>Top Related Tweets </p>
+    <p>Top Related Hashtags </p>
     </div>
 
     </div>
