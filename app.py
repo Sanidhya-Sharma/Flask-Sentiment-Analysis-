@@ -393,7 +393,7 @@ def CitywiseTopHashtags():
     for rows in data_gd2.get_values():
         datalist.append(int(rows[1]))
 
-    #print(datalist)
+    print(datalist)
 
     #ITTERATING ROWS FOR CITY NAMES
     for rows in data_gd2.get_values():

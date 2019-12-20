@@ -8,13 +8,13 @@ body {
   background-size: cover;
 }
 
-/*THE MAIN PAGE */
+/*--------------------------------------THE MAIN PAGE -----------------------------------------*/
 .container {
   width: 1200px;
   margin: 0 auto;
 }
 
-/*THE VISUALIZATION IMAGE DIVISON*/
+/*-------------------------------------THE VISUALIZATION IMAGE DIVISON-------------------------------------------*/
 .background-img{
     position: fixed;
     left: 646px;
