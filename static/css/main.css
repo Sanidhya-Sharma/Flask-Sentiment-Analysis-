@@ -1,11 +1,32 @@
+html {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   background-color: #DCDCDC;
-  background-image: url("");
+  /*background-image: url("");
   background-repeat: no-repeat, repeat;
-  background-size: cover;
+  background-size: cover;*/
+  height: 100%;
+}
+
+/*GRID FOR DIVISION*/
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 10px;
+  background-color: #DCDCDC;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: #DCDCDC;
+  /*border: 1px solid black;*/
+  text-align: center;
+  font-size: 30px;
 }
 
 /*--------------------------------------THE MAIN PAGE -----------------------------------------*/
@@ -16,14 +37,17 @@ body {
 
 /*-------------------------------------THE VISUALIZATION IMAGE DIVISON-------------------------------------------*/
 .background-img{
-    position: fixed;
-    left: 646px;
-    top: 188px;
+    position: static;
+    left: 400px;
+    top: 450px;
     background-repeat: no-repeat;
 }
 .Visual_img{
-    width: 45vw;
-    height: 75vh;
+    /*width: 45vw;
+    height: 75vh;*/
+    min-width: 35%;
+    max-width: 35%;
+    height: auto;
 }
 
 /*---------------------------Navigation Bar------------------------------*/
@@ -62,9 +86,9 @@ body {
 
 /* Page content. The value of the margin-left property should match the value of the sidebar's width property */
 div.content {
-  margin-left: 150px;
+  margin-left: 140px;
   padding: 1px 16px;
-  height: 400px;
+  height: 800px;
 }
 
 /* On screens that are less than 700px wide, make the sidebar into a topbar */
