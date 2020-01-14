@@ -26,7 +26,7 @@ def HashtagSentiment():
     #CALLING CSV FILE IN A DATAFRAME
     # dataframe = pd.read_csv(r"C:\Users\Manomay\Desktop\App\Source\sample.csv")    #BY DEFAULT IT DEOSEN'T NEED LOCATION BUT DUE TO ERRORS I HAD TO ASSIGN LOCATION
 
-    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -72,7 +72,7 @@ def CitySentiments():
     print('City Sentiments Page')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -111,7 +111,7 @@ def TopTweetingCities():
     print('Top Tweeting Cities Page')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -156,7 +156,7 @@ def OverallSentiments():
     print('Overall Sentiments Page')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -198,7 +198,7 @@ def TopHashtags():
     print('Top Hashtags Page')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -244,7 +244,7 @@ def MostSpokenWord():
     print('Most Spoken words')
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\MostSpokenWord.csv"))
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Source\MostSpokenWord.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Word', 'Count']
@@ -288,7 +288,7 @@ def CitywiseHashtagsSentiments():
     print(select)
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -355,7 +355,7 @@ def CitywiseTopHashtags():
     print(select)
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\sample.csv"))
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Source\sample.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Hashtags', 'Cities', 'Sentiment_Rating', 'Sentiment']
@@ -426,7 +426,7 @@ def CitywiseMostSpokenWord():
     print(select)
 
     #CALLING CSV FILE IN A DATAFRAME
-    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Flask-Sentiment-Analysis-\Source\MostUsedWord.csv"))
+    dataframe = pd.read_csv(os.path.join(os.getcwd(), "Source\MostUsedWord.csv"))
 
     #MAKING COLOUMNS FOR A IMPORTED CSV FILE
     dataframe.columns = ['Cities', 'Words']
